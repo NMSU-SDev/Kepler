@@ -102,14 +102,54 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="Kepler" startnode="1" creator="Twine" creator-version="2.2.1" ifid="E8795B13-C3DF-4E1E-97B8-9DF0BBE7E012" zoom="1" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">progress{
-  -webkit-appearance: none;
+	<div id="store-area" hidden><tw-storydata name="Kepler" startnode="1" creator="Twine" creator-version="2.2.1" ifid="E8795B13-C3DF-4E1E-97B8-9DF0BBE7E012" zoom="1" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/***********************
+*  Karma meter styling 
+***********************/
+
+#karmameter {
+  	width: 200px;
+  	height: 25px;
+  	/* For Firefox */
+  	background: #EEE;
+  	box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+  	border-radius: 3px;
+}
+
+/* WebKit */
+#karmameter::-webkit-meter-bar {
+  	background: #EEE;
+  	box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+  	border-radius: 3px;
+}
+
+#karmameter::-webkit-meter-optimum-value,
+#karmameter::-webkit-meter-suboptimum-value,
+#karmameter::-webkit-meter-even-less-good-value 
+{
+  	border-radius: 3px;
+}
+
+/* Good Karma Color */
+#karmameter::-webkit-meter-optimum-value 
+{
+  	background: forestgreen;
+}
+
+/* Neutral Karma Color */
+#karmameter::-webkit-meter-suboptimum-value 
+{
+  	background: gold;
+}
+
+/* Bad Karma Color */
+#karmameter::-webkit-meter-even-less-good-value  
+{
+  	background: firebrick;
 }
 
 
-
-
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 
 </script><tw-tag name="Core" color="purple"></tw-tag>,<tw-tag name="BGProcess" color="red"></tw-tag><tw-passagedata pid="1" name="Start" tags="Core" position="300,200" size="200,100">&lt;img src = &quot;images/startbackground.jpg&quot; width = &quot;95%&quot; alt = &quot;A spaceship interior with a window looking out into space&quot;&gt;
@@ -118,11 +158,11 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 
 &lt;center&gt; You wake up in a daze on the a cold, metal floor. You get up and begin to shake off the feeling of confusion and fatigue. You look around the room to find anything that feels familiar. &lt;/center&gt;
 
-[[Continue]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="BGProcess" position="104,101" size="100,100">// Caching audio files for playback
+[[Continue]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="BGProcess" position="50,100" size="100,100">// Caching audio files for playback
 &lt;&lt;cacheaudio &quot;maintheme&quot; &quot;sounds/maintheme.mp3&quot;&gt;&gt;
 
-//Initialize karma variable to 50
-&lt;&lt;set $karma=0&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Window" tags="" position="225,500" size="100,100">&lt;img src = &quot;images/startwindow.jpg&quot; alt = &quot;A view from a large window&quot;&gt;
+// Initialize karma variable to 0 (range is -100 to 100)
+&lt;&lt;set $karma = 0&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Window" tags="" position="225,500" size="100,100">&lt;img src = &quot;images/startwindow.jpg&quot; alt = &quot;A view from a large window&quot;&gt;
 
 You look out through the thick glass pane to see nothing but a large, blue planet with a star peeking just over the horizon.
 
@@ -133,12 +173,18 @@ You leave the room and find yourself in a large chamber with several long corrid
 
 [[Continue|AI Intro]] </tw-passagedata><tw-passagedata pid="5" name="Continue" tags="Core" position="300,325" size="200,100">&lt;img src = &quot;images/startbackground.jpg&quot; width = &quot;95%&quot; alt = &quot;A spaceship interior with a window looking out into space&quot;&gt;
 
-You notice a large [[window|Window]] on the other side of the room and behind you there is a large opening leading to a [[hallway|Hallway]].</tw-passagedata><tw-passagedata pid="6" name="StoryCaption" tags="" position="100,221" size="100,100">Karma
-&lt;meter value = &quot;0&quot; id=&quot;karma&quot; min=&quot;-100&quot; max=&quot;100&quot;&gt;&lt;/meter&gt;
+You notice a large [[window|Window]] on the other side of the room and behind you there is a large opening leading to a [[hallway|Hallway]].</tw-passagedata><tw-passagedata pid="6" name="StoryCaption" tags="" position="50,225" size="100,100">/****************************
+* Karma meter
+****************************/\
+\
+&lt;hr/&gt;
+Karma Status
+&lt;meter id = &quot;karmameter&quot; min = &quot;-100&quot; max = &quot;100&quot; low = &quot;-25&quot; high = &quot;25&quot; optimum = &quot;100&quot; value = &quot;0&quot;&gt;&lt;/meter&gt;\
 &lt;&lt;script&gt;&gt;
-document.getElementById(&quot;karma&quot;).value = variables().karma;
+document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;/script&gt;&gt;\
-&lt;&lt;print $karma&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="AI Intro" tags="" position="625,500" size="100,100">&lt;img src = &quot;images/corridor.jpg&quot; width = &quot;95%&quot; alt = &quot;A large hub with several hallways connected to it.&quot;&gt;
+&lt;&lt;print &quot;\n&quot; + $karma&gt;&gt;
+&lt;hr/&gt;</tw-passagedata><tw-passagedata pid="7" name="AI Intro" tags="" position="625,500" size="100,100">&lt;img src = &quot;images/corridor.jpg&quot; width = &quot;95%&quot; alt = &quot;A large hub with several hallways connected to it.&quot;&gt;
 
 A female voice comes over the spaceship&#39;s intercom and states,
 
@@ -149,14 +195,14 @@ Without any memory of the events preceeding hibernation you ask:
 &lt;&lt;link [[What did you do with the rest of my crew?|Ask Accusingly]]&gt;&gt;
 &lt;&lt;set $karma-=30&gt;&gt;
 &lt;&lt;script&gt;&gt;
-document.getElementById(&quot;karma&quot;).value = variables().karma;
+document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;/script&gt;&gt;
 \
 &lt;&lt;/link&gt;&gt;
 &lt;&lt;link [[Where is the rest of my crew?|Ask Curiously]]&gt;&gt;
 &lt;&lt;set $karma+=30&gt;&gt;
 &lt;&lt;script&gt;&gt;
-document.getElementById(&quot;karma&quot;).value = variables().karma;
+document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;/script&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 \
