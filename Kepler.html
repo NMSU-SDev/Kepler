@@ -108,7 +108,9 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 </script><tw-tag name="Core" color="purple"></tw-tag>,<tw-tag name="BGProcess" color="red"></tw-tag><tw-passagedata pid="1" name="Start" tags="Core" position="300,200" size="200,100">&lt;img src = &quot;images/startbackground.jpg&quot; width = &quot;95%&quot; alt = &quot;A spaceship interior with a window looking out into space&quot;&gt;
 
@@ -120,7 +122,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 &lt;&lt;cacheaudio &quot;maintheme&quot; &quot;sounds/maintheme.mp3&quot;&gt;&gt;
 
 //Initialize karma variable to 50
-&lt;&lt;set $karma=50&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Window" tags="" position="225,500" size="100,100">&lt;img src = &quot;images/startwindow.jpg&quot; alt = &quot;A view from a large window&quot;&gt;
+&lt;&lt;set $karma=0&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Window" tags="" position="225,500" size="100,100">&lt;img src = &quot;images/startwindow.jpg&quot; alt = &quot;A view from a large window&quot;&gt;
 
 You look out through the thick glass pane to see nothing but a large, blue planet with a star peeking just over the horizon.
 
@@ -132,7 +134,7 @@ You leave the room and find yourself in a large chamber with several long corrid
 [[Continue|AI Intro]] </tw-passagedata><tw-passagedata pid="5" name="Continue" tags="Core" position="300,325" size="200,100">&lt;img src = &quot;images/startbackground.jpg&quot; width = &quot;95%&quot; alt = &quot;A spaceship interior with a window looking out into space&quot;&gt;
 
 You notice a large [[window|Window]] on the other side of the room and behind you there is a large opening leading to a [[hallway|Hallway]].</tw-passagedata><tw-passagedata pid="6" name="StoryCaption" tags="" position="100,221" size="100,100">Karma
-&lt;progress value = &quot;0&quot; id=&quot;karma&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;
+&lt;meter value = &quot;0&quot; id=&quot;karma&quot; min=&quot;-100&quot; max=&quot;100&quot;&gt;&lt;/meter&gt;
 &lt;&lt;script&gt;&gt;
 document.getElementById(&quot;karma&quot;).value = variables().karma;
 &lt;&lt;/script&gt;&gt;\
