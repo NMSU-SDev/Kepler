@@ -166,7 +166,11 @@ body{
 
 
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+
 
 
 
@@ -212,7 +216,7 @@ You leave the room and find yourself in a large chamber with several long corrid
 [[Continue|AI Intro]] </tw-passagedata><tw-passagedata pid="5" name="Continue" tags="Core" position="288,163" size="200,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startBackground.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
-You notice a large [[window|Window]] on the other side of the room and behind you there is a large [[Door]] . To the left you notice a [[desk|Desk]]
+You notice a large [[window|Window]] on the other side of the room and behind you there is a large [[Door]] . To the front, you notice a [[desk|Desk]]
 &lt;&lt;if $keycard is true&gt;&gt;You have a keycard&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="StoryCaption" tags="" position="48,223" size="100,100">/****************************
 * Karma meter
 ****************************/\
@@ -266,7 +270,9 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 
 </tw-passagedata><tw-passagedata pid="8" name="Ask Accusingly" tags="" position="750,400" size="100,100">
 &quot;How dare you accuse me of such things, you were sent on this mission alone.&quot;</tw-passagedata><tw-passagedata pid="9" name="Ask Curiously" tags="" position="750,600" size="100,100">
-&quot;You were sent on this mission alone, don&#39;t you remember commander?&quot;</tw-passagedata><tw-passagedata pid="10" name="Desk" tags="" position="223,374" size="100,100">
+&quot;You were sent on this mission alone, don&#39;t you remember commander?&quot;</tw-passagedata><tw-passagedata pid="10" name="Desk" tags="" position="223,374" size="100,100">&lt;&lt;script&gt;&gt;
+document.body.style.backgroundImage= &quot;url(&#39;images/desk.jpg&#39;)&quot;
+&lt;&lt;/script&gt;&gt;
 You find a key card on the desk.
 &lt;&lt;link [[Take the keycard|Continue]]&gt;&gt;\
 &lt;&lt;set $inventory[0]++&gt;&gt;\
