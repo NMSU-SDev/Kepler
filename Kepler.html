@@ -219,6 +219,7 @@ div#memory_board > div{
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.game = {};
 
 //create new game board
@@ -226,12 +227,9 @@ window.memoryFlipTile = function ( tileID, val, tile ){
 	var memory_values = [];//array with tile values
 	var memory_tile_ids = [];
 	var tiles_flipped = 0;
-	console.log(tile.innerHTML == "" && memory_values.length < 2);
-	if(tile.innerHTML == "" && memory_values.length < 2){
-		console.log(tileID);
-		var currentTile = document.getElementById(tileID);
-		currentTile.style.background = '#FFF';
-		currentTile.innerHTML = val;
+	if(tileID.innerHTML == "" && memory_values.length < 2){
+		tileID.style.background = '#FFF';
+		tileID.innerHTML = val;
 		if(memory_values.length == 0){
 			memory_values.push(val);
 			memory_tile_ids.push(tileID);
@@ -264,6 +262,7 @@ window.memoryFlipTile = function ( tileID, val, tile ){
 };
 
 window.newBoard = function (){
+				if()
 		    var password = "SECRET";//password to progress in game
 		    var s1 = password.split(""); //split characters into character array
 		    var s2 = password.split("");//create another array with same characters
@@ -283,11 +282,12 @@ Array.prototype.memory_tile_shuffle = function( ){
 	
 		memory_array.memory_tile_shuffle();
 		for(var i = 0; i < memory_array.length; i++){
-		output += '<div id="tile_'+i+'" onclick="window.memoryFlipTile(\'tile_'+i+'\',\''+memory_array[i]+'\',this)"></div>';
+		output += '<div id="tile_'+i+'" onclick="window.memoryFlipTile(\'tile_'+i+'\',\''+memory_array[i]+'\',this);stopPropagation()"></div>';
 		}
 			
 		document.getElementById('memory_board').innerHTML = output;//set values for each tile
 };
+
 </script><tw-tag name="Core" color="purple"></tw-tag>,<tw-tag name="BGProcess" color="red"></tw-tag><tw-passagedata pid="1" name="Start" tags="Core" position="300,25" size="200,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
@@ -553,8 +553,8 @@ The door is unlocked. [[Enter|Q2]]
 &lt;&lt;endif&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="Poem" tags="" position="2085,663" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/readpoem.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
-&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;  [[Return|Quarters]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Puzzle" tags="" position="1458,863" size="100,100">&lt;p id=&quot;matched&quot;&gt;MATCHED LETTERS:&lt;/p&gt;
-&lt;div id=&quot;memory_board&quot; onclick=&quot;window.newBoard()&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;  [[Return|Quarters]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Puzzle" tags="" position="1455,866" size="100,100">&lt;p id=&quot;matched&quot;&gt;MATCHED LETTERS:&lt;/p&gt;
+&lt;div id=&quot;memory_board&quot; onclick=&quot;window.newBoard();&quot;&gt;&lt;/div&gt;
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter 6 letter password...&quot; &gt;&gt;&lt;/span&gt;
 &lt;span id=&quot;submit&quot;&gt;
 &lt;&lt;button &quot;Submit&quot;&gt;&gt;
