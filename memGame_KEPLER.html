@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div#memory_board{
+	background:#CCC;
+	border:#999 1px solid;
+	width:405px;
+	height:540px;
+	padding:24px;
+	margin:0px auto;
+}
+div#memory_board > div{
+	background: url(tile_bg.jpg) no-repeat;
+	border:#000 1px solid;
+	width:71px;
+	height:71px;
+	float:left;
+	margin:10px;
+	padding:20px;
+	font-size:64px;
+	cursor:pointer;
+	text-align:center;
+}
+</style>
+<p id="matched">
+MATCHED LETTERS:
+</p>
+<script>
+var password = "KEPLER"; //password to progress in game
+var s1 = password.split(""); //split characters into character array
+var s2 = password.split("");//create another array with same characters
+var memory_array = s1.concat(s2);//concatenate the two arrays to get 2 of each letter
+var memory_values = [];//array with tile values
+var memory_tile_ids = [];
+var tiles_flipped = 0;
+
+//shuffle memory array
+Array.prototype.memory_tile_shuffle = function(){
+    var i = this.length, j, temp;
+    while(--i > 0){
+        j = Math.floor(Math.random() * (i+1));
+        temp = this[j];
+        this[j] = this[i];
+        this[i] = temp;
+    }
+}
+
+//create new game board
+function newBoard(){
+	tiles_flipped = 0;//no tiles are flipped over
+	var output = '';
+    memory_array.memory_tile_shuffle();
+	for(var i = 0; i < memory_array.length; i++){
+		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
+	}
+	document.getElementById('memory_board').innerHTML = output;//set values for each tile
+}
+
+function memoryFlipTile(tile,val){
+	if(tile.innerHTML == "" && memory_values.length < 2){
+		tile.style.background = '#FFF';
+		tile.innerHTML = val;
+		if(memory_values.length == 0){
+			memory_values.push(val);
+			memory_tile_ids.push(tile.id);
+		} else if(memory_values.length == 1){
+			memory_values.push(val);
+			memory_tile_ids.push(tile.id);
+			if(memory_values[0] == memory_values[1]){
+				tiles_flipped += 2;
+				document.getElementById("matched").innerHTML += memory_values[0];//display matched characters when a match is found
+				// Clear both arrays
+				memory_values = [];
+            	memory_tile_ids = [];
+			} else {
+				function flip2Back(){
+				    // Flip the 2 tiles back over
+				    var tile_1 = document.getElementById(memory_tile_ids[0]);
+				    var tile_2 = document.getElementById(memory_tile_ids[1]);
+				    tile_1.style.background = 'url(tile_bg.jpg) no-repeat';
+            	    tile_1.innerHTML = "";
+				    tile_2.style.background = 'url(tile_bg.jpg) no-repeat';
+            	    tile_2.innerHTML = "";
+				    // Clear both arrays
+				    memory_values = [];
+            	    memory_tile_ids = [];
+				}
+				setTimeout(flip2Back, 700);
+			}
+		}
+	}
+}
+function returnWord(){
+}
+</script>
+</head>
+<body>
+<div id="memory_board"></div>
+<script>newBoard();</script>
+</body>
+</html>
