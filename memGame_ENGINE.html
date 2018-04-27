@@ -3,15 +3,16 @@
 <head>
 <style>
 div#memory_board{
-	background:#CCC;
-	border:#999 1px solid;
+	background:#000;
 	width:405px;
 	height:540px;
 	padding:24px;
 	margin:0px auto;
+	color: #33cc33;
+	font-family: "Courier New", Courier, monospace;
 }
 div#memory_board > div{
-	background: url(tile_bg.jpg) no-repeat;
+	background: #33cc33;
 	border:#000 1px solid;
 	width:71px;
 	height:71px;
@@ -23,9 +24,6 @@ div#memory_board > div{
 	text-align:center;
 }
 </style>
-<p id="matched">
-MATCHED LETTERS:
-</p>
 <script>
 var password = "ENGINE"; //password to progress in game
 var s1 = password.split(""); //split characters into character array
@@ -54,12 +52,13 @@ function newBoard(){
 	for(var i = 0; i < memory_array.length; i++){
 		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
 	}
-	document.getElementById('memory_board').innerHTML = output;//set values for each tile
+	output+="Matched letters: "
+	document.getElementById('memory_board').innerHTML = output;
 }
 
 function memoryFlipTile(tile,val){
 	if(tile.innerHTML == "" && memory_values.length < 2){
-		tile.style.background = '#FFF';
+		tile.style.background = '#000';
 		tile.innerHTML = val;
 		if(memory_values.length == 0){
 			memory_values.push(val);
@@ -69,7 +68,7 @@ function memoryFlipTile(tile,val){
 			memory_tile_ids.push(tile.id);
 			if(memory_values[0] == memory_values[1]){
 				tiles_flipped += 2;
-				document.getElementById("matched").innerHTML += memory_values[0];//display matched characters when a match is found
+				document.getElementById("memory_board").innerHTML += memory_values[0];//display matched characters when a match is found
 				// Clear both arrays
 				memory_values = [];
             	memory_tile_ids = [];
@@ -78,9 +77,9 @@ function memoryFlipTile(tile,val){
 				    // Flip the 2 tiles back over
 				    var tile_1 = document.getElementById(memory_tile_ids[0]);
 				    var tile_2 = document.getElementById(memory_tile_ids[1]);
-				    tile_1.style.background = 'url(tile_bg.jpg) no-repeat';
+				    tile_1.style.background = "#33cc33";
             	    tile_1.innerHTML = "";
-				    tile_2.style.background = 'url(tile_bg.jpg) no-repeat';
+				    tile_2.style.background = "#33cc33";
             	    tile_2.innerHTML = "";
 				    // Clear both arrays
 				    memory_values = [];
