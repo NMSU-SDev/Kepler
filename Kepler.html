@@ -213,6 +213,7 @@ div#memory_board > div{
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.game = {};
 window.game.memory_values = [];
 window.game.memory_tile_ids = [];
@@ -284,6 +285,7 @@ Array.prototype.memory_tile_shuffle = function( ){
 			
 		document.getElementById('memory_board').innerHTML = output;//set values for each tile
 };
+
 
 
 
@@ -550,13 +552,16 @@ document.body.style.backgroundImage= &quot;url(&#39;images/DoorQ2unlocked.jpg&#3
 &lt;&lt;if visited(&quot;Q1&quot;) gt 0&gt;&gt;\
 The door is unlocked. [[Enter|Q2]] 
 &lt;&lt;else&gt;&gt; The door is locked. [[Return|Quarters]]\
-&lt;&lt;endif&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="Poem" tags="" position="2000,700" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;&lt;endif&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="Poem" tags="" position="2000,625" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/readpoem.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
-&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;  [[Return|Quarters]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Puzzle" tags="" position="1450,850" size="100,100">&lt;&lt;set $puzzle = random(4)&gt;&gt;\
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;  [[Return|Quarters]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Puzzle" tags="" position="1450,850" size="100,100">&lt;&lt;script&gt;&gt;
+document.body.style.backgroundImage= &quot;url(&#39;images/Brig.jpg&#39;)&quot;
+&lt;&lt;/script&gt;&gt;\
+&lt;&lt;set $puzzle = random(4)&gt;&gt;\
 &lt;&lt;if $puzzle eq 0&gt;&gt;\
 &lt;iframe src=&quot;memGames/memGame_ALIENS.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter 6 letter password...&quot; &gt;&gt;&lt;/span&gt;
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
 &lt;span id=&quot;submit&quot;&gt;
 &lt;&lt;button &quot;Submit&quot;&gt;&gt;
 &lt;&lt;if $p1 eq &quot;ALIENS&quot;&gt;&gt; 
@@ -571,7 +576,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/readpoem.jpg&#39;)&qu
 \
 &lt;&lt;if $puzzle eq 1&gt;&gt;\
 &lt;iframe src=&quot;memGames/memGame_PLANET.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter 6 letter password...&quot; &gt;&gt;&lt;/span&gt;
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
 &lt;span id=&quot;submit&quot;&gt;
 &lt;&lt;button &quot;Submit&quot;&gt;&gt;
 &lt;&lt;if $p1 eq &quot;PLANET&quot;&gt;&gt; 
@@ -586,7 +591,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/readpoem.jpg&#39;)&qu
 \
 &lt;&lt;if $puzzle eq 2&gt;&gt;\
 &lt;iframe src=&quot;memGames/memGame_SECRET.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter 6 letter password...&quot; &gt;&gt;&lt;/span&gt;
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
 &lt;span id=&quot;submit&quot;&gt;
 &lt;&lt;button &quot;Submit&quot;&gt;&gt;
 &lt;&lt;if $p1 eq &quot;SECRET&quot;&gt;&gt; 
@@ -601,7 +606,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/readpoem.jpg&#39;)&qu
 \
 &lt;&lt;if $puzzle eq 3&gt;&gt;\
 &lt;iframe src=&quot;memGames/memGame_SYSTEM.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter 6 letter password...&quot; &gt;&gt;&lt;/span&gt;
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
 &lt;span id=&quot;submit&quot;&gt;
 &lt;&lt;button &quot;Submit&quot;&gt;&gt;
 &lt;&lt;if $p1 eq &quot;SYSTEM&quot;&gt;&gt; 
@@ -616,7 +621,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/readpoem.jpg&#39;)&qu
 \
 &lt;&lt;if $puzzle eq 4&gt;&gt;\
 &lt;iframe src=&quot;memGames/memGame_MATRIX.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter 6 letter password...&quot; &gt;&gt;&lt;/span&gt;
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
 &lt;span id=&quot;submit&quot;&gt;
 &lt;&lt;button &quot;Submit&quot;&gt;&gt;
 &lt;&lt;if $p1 eq &quot;MATRIX&quot;&gt;&gt; 
