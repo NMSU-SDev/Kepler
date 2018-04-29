@@ -16,6 +16,9 @@ Before doing any work, enter the following commands to ensure that you have an u
 4. `git merge master`
 5. `git push`
 
-## Testing the game
+## Easier testing
+When making changes to the Twine story and testing it in the web browser, rather than clicking the .html file in your file browser every time you use Twine's `Publish to File` option, you can simply refresh your browser and the changes should be reloaded and you will stay at the same passage you were working in. This removes a few mouse clicks from the overall steps needed to view new changes.
+
+## Remote access to the game
 The most recent deployed version of the game can be accessed at this [link](http://web.nmsu.edu/~iancj/Kepler.html). If the latest build is not at this link, feel free ask for the most up-to-date version of the game to be deployed.
 
