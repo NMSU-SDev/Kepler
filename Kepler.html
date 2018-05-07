@@ -300,26 +300,23 @@ Array.prototype.memory_tile_shuffle = function( ){
 
 
 
-</script><tw-tag name="Core" color="purple"></tw-tag>,<tw-tag name="BGProcess" color="red"></tw-tag>,<tw-tag name="AltEnding" color="blue"></tw-tag><tw-passagedata pid="1" name="Start" tags="Core" position="300,25" size="200,100">&lt;&lt;script&gt;&gt;
+</script><tw-tag name="Core" color="purple"></tw-tag>,<tw-tag name="BGProcess" color="red"></tw-tag>,<tw-tag name="AltEnding" color="blue"></tw-tag>,<tw-tag name="GoodEnding" color="green"></tw-tag>,<tw-tag name="NeutralEnding" color="yellow"></tw-tag>,<tw-tag name="BadEnding" color="red"></tw-tag><tw-passagedata pid="1" name="Start" tags="Core" position="300,25" size="200,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
-&lt;&lt;audio &quot;maintheme&quot; play volume 0.25 fadeoverto 5 0.75&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You wake up in a daze on the a cold, metal floor. You get up and begin to shake off the feeling of confusion and fatigue. You look around the room to find anything that feels familiar.
 [[Continue]]\
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="BGProcess" position="50,100" size="100,100">// Caching audio files for playback
-&lt;&lt;cacheaudio &quot;maintheme&quot; &quot;sounds/maintheme.mp3&quot;&gt;&gt;
+</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="BGProcess" position="50,100" size="100,100">&lt;&lt;cacheaudio &quot;maintheme&quot; &quot;sounds/maintheme.mp3&quot;&gt;&gt;
 
-// Initialize karma variable to 0 (range is -100 to 100)
 &lt;&lt;set $karma = 0&gt;&gt;
 
-/********************************************************
+&lt;!--
 *Initialize all inventory item types to 0, the value at
 *each index represents number of each object type held
 *[0]=keys
 *[1]=hint credit
 *[2]=karma credit
-*********************************************************/
+--&gt;
 &lt;&lt;set $inventory=[0,0,0]&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Window" tags="" position="100,375" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startwindow.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
@@ -329,7 +326,8 @@ document.body.style.backgroundImage= &quot;url(&#39;images/startwindow.jpg&#39;)
 document.body.style.backgroundImage= &quot;url(&#39;images/corridor.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You leave the room and find yourself in a large chamber with several long corridors. Each corridor seems more extensive than the next.
-[[Continue|AI Intro]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="Continue" tags="Core" position="300,150" size="200,100">&lt;&lt;if variables().inventory[0] eq 0&gt;&gt;
+[[Continue|AI Intro]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="Continue" tags="Core" position="300,150" size="200,100">&lt;&lt;audio &quot;maintheme&quot; loop play&gt;&gt;
+&lt;&lt;if variables().inventory[0] eq 0&gt;&gt;
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
@@ -1098,23 +1096,23 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 
 &lt;&lt;/button&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="72" name="GoodKarmaEnding" tags="" position="325,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+</tw-passagedata><tw-passagedata pid="72" name="GoodKarmaEnding" tags="GoodEnding" position="325,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Very well, Commander. I will begin prepping the research equipment for deployment. Please go to the other side of the room and enter the ship-to-surface pod and run through the system check.&quot;
 [[Go to pod|GoodKarmaEnding2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="BadKarmaEnding" tags="" position="700,3600" size="100,100">BAD ENDING</tw-passagedata><tw-passagedata pid="74" name="NeutralKarmaEnding" tags="" position="500,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\</tw-passagedata><tw-passagedata pid="75" name="GoodKarmaEnding2" tags="" position="200,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="BadKarmaEnding" tags="BadEnding" position="700,3600" size="100,100">BAD ENDING</tw-passagedata><tw-passagedata pid="74" name="NeutralKarmaEnding" tags="NeutralEnding" position="500,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\</tw-passagedata><tw-passagedata pid="75" name="GoodKarmaEnding2" tags="GoodEnding" position="200,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You go into the ship-to-surface pod and being the on-screen system check. You are still unsure whether or not the crew is on the surface of the planet or not. Regardless of whether or not they are there, you are determined to complete the research and send your findings back to Earth in the hopes that the human race will have a chance to return here and continue its legacy. You hear the AI intercom click on again:
 
 &quot;All systems are ready and the research equipment is ready for deployment. Are you ready to go to the surface, Commander?&quot;
 
 [[Begin launch to surface|GoodKarmaEnding3]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="GoodKarmaEnding3" tags="" position="325,3725" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="GoodKarmaEnding3" tags="GoodEnding" position="325,3725" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/onsurface.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You land on the surface of planet. It does not look much like Earth but it feels like it could become home. You hear the research equipment land behind you in the distance. Then everything fades to white...
 
 [[Continue|GoodKarmaEnding4]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="GoodKarmaEnding4" tags="" position="325,3850" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="GoodKarmaEnding4" tags="GoodEnding" position="325,3850" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/whitescreen.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -1125,17 +1123,17 @@ You look around and see nothing but a large white room. You hear a familiar voic
 &lt;&lt;set $linktext=&quot;\&quot;Uh...Hello? What is going on here?\&quot;&quot;&gt;&gt;\
 [[$linktext|GoodKarmaEnding5]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="78" name="GoodKarmaEnding5" tags="" position="200,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+</tw-passagedata><tw-passagedata pid="78" name="GoodKarmaEnding5" tags="GoodEnding" position="200,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Oh! I didn&#39;t realize they had already added the post-simulation reporting routine into the simulator. Uh, well, hello, Commander-Sim #3591. I am the person who has been guiding you throughout this simulation.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;Wait, I am in a simulation?\&quot;&quot;&gt;&gt;\
 [[$linktext|GoodKarmaEnding6]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="GoodKarmaEnding6" tags="" position="200,3975" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="GoodKarmaEnding6" tags="GoodEnding" position="200,3975" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Well, actually, you ARE the simulation. We modeled this situation in order to test what the ship commander would do in the event that his crew were to disappear without any recollection of what happened. Your personality traits and decision-making algorithms are based on the large pool of data we collected through questioning the Commander.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;So, none of this is real?\&quot;&quot;&gt;&gt;\
 [[$linktext|GoodKarmaEnding7]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="GoodKarmaEnding7" tags="" position="325,3975" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="GoodKarmaEnding7" tags="GoodEnding" position="325,3975" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Correct, this was just a simulation meant to collect data about what our Commander may do in this hypothetical sitation when the real mission begins. We just recently added in this functionality so we could get more personal data directly from our simulated Commander. To keep the simulation data at small as possible, though, all unnecessary data will be cleared 5 minutes after the simulation is completed so the next one can begin. Unfortunately, I will not be able to speak with you any longer. It was a pleasure, Commander. And thank you for making the right choice. I only hope that the real Commander will make the same decision you made here today. Godspeed.&quot;
 
 [[END GAME|ENDPASSAGE]]
