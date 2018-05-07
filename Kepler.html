@@ -310,6 +310,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.j
 [[Continue]]\
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="BGProcess" position="50,100" size="100,100">&lt;&lt;cacheaudio &quot;maintheme&quot; &quot;sounds/maintheme.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;puzzletheme&quot; &quot;sounds/puzzletheme.mp3&quot;&gt;&gt;
 
 &lt;&lt;set $karma = 0&gt;&gt;
 
@@ -610,7 +611,10 @@ The door is unlocked. [[Enter|Q2]]
 &lt;&lt;endif&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="Poem" tags="" position="2000,625" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/readpoem.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
-&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;  [[Return|Quarters]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Puzzle" tags="" position="1950,775" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;  [[Return|Quarters]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Puzzle" tags="" position="1950,775" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;
+&lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;
+
+&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/Brig.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;\
 &lt;&lt;set $puzzle = random(4)&gt;&gt;\
@@ -649,7 +653,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/Brig.jpg&#39;)&quot;
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
 &lt;span id=&quot;submit&quot;&gt;
 &lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;SECRET&quot;&gt;&gt; 
+&lt;&lt;if $p1 eq &quot;SECRET&quot;&gt;&gt;
 &lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;
 &lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -679,7 +683,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/Brig.jpg&#39;)&quot;
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
 &lt;span id=&quot;submit&quot;&gt;
 &lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;MATRIX&quot;&gt;&gt; 
+&lt;&lt;if $p1 eq &quot;MATRIX&quot;&gt;&gt;
 &lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;
 &lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -687,7 +691,9 @@ document.body.style.backgroundImage= &quot;url(&#39;images/Brig.jpg&#39;)&quot;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="OutOfJail" tags="" position="2100,775" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;&quot;Next time, don&#39;t attempt to damage the ship.&quot;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="OutOfJail" tags="" position="2100,775" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;
+&lt;&lt;audio &quot;maintheme&quot; loop play&gt;&gt;
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;&quot;Next time, don&#39;t attempt to damage the ship.&quot;
 [[Go back to corridor|Examine corridor]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="MysteriousGood" tags="" position="875,1100" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;There was a large solar anomaly from one of the nearby stars that caused an explosion in several sectors of the ship including this one. There was a catastrophic decompression. The ship was able to enter emergency mode but not before we suffered moderate crew casualties as well as a loss of 1/3 of our food reserves.&quot;
