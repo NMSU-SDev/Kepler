@@ -335,7 +335,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/startbackground.jpg&#
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You notice a large [[window|Window]] on the other side of the room and behind you there is a large [[door|Door]]. \
 &lt;&lt;if visited(&quot;Desk&quot;) eq 0 and variables().inventory[0] eq 0&gt;&gt;To the front, you notice a [[desk|Desk]].
 &lt;&lt;/if&gt;&gt;&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="6" name="StoryCaption" tags="" position="48,223" size="100,100">/****************************
+</tw-passagedata><tw-passagedata pid="6" name="StoryCaption" tags="" position="50,225" size="100,100">/****************************
 * Karma meter
 ****************************/\
 \
@@ -354,12 +354,6 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;div id=&quot;inventoryUI&quot; align=&quot;center&quot;&gt;\
 &lt;img src=&quot;images/keycardred.png&quot; alt=&quot;red keycard&quot; style=&quot;width:20%; vertical-align: middle&quot;&gt;\
 &lt;span style=&quot;vertical-align: middle;&quot;&gt; x &lt;&lt;print $inventory[0]&gt;&gt;&lt;/span&gt;
-
-&lt;img src=&quot;images/hintcredit.png&quot; alt=&quot;hint credit coin&quot; style=&quot;width:20%; vertical-align: middle;&quot;&gt;\
-&lt;span style=&quot;vertical-align: middle&quot;&gt; x &lt;&lt;print $inventory[1]&gt;&gt;&lt;/span&gt;
-
-&lt;img src=&quot;images/karmacredit.png&quot; alt=&quot;karma credit coin&quot; style=&quot;width:20%; vertical-align: middle;&quot;&gt;\
-&lt;span style=&quot;vertical-align: middle&quot;&gt; x &lt;&lt;print $inventory[2]&gt;&gt;&lt;/span&gt;
 &lt;/div&gt;\
 &lt;&lt;script&gt;&gt;
 document.getElementById(&quot;inventoryUI&quot;).style.marginLeft=&quot;20px&quot;;
@@ -829,10 +823,10 @@ You find yourself in a room with a several doors. One of them has a sign above i
 document.body.style.backgroundImage=&quot;url(&#39;images/conference.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
-Inside of the conference room, there is a large conference table. To your right there is a large bookcase with a glass cover. There is a keypad that looks like it will unlock the bookcase.
-
+Inside of the conference room, there is a large conference table.
+&lt;&lt;if variables().inventory[0] eq 0&gt;&gt;\To your right there is a large bookcase with a glass cover. There is a keypad that looks like it will unlock the bookcase.\
+[[Use keypad to unlock bookcase|BookcasePuzzle]]&lt;&lt;/if&gt;&gt;
 [[Exit back into Sector 2 Landing|Sec2Landing]]
-[[Use keypad to unlock bookcase|BookcasePuzzle]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="HighRankSec" tags="" position="500,2550" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/highrankhall.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;\
@@ -919,9 +913,8 @@ document.body.style.backgroundImage=&quot;url(&#39;images/conference.jpg&#39;)&q
 &lt;&lt;/button&gt;&gt;
 &lt;/span&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="62" name="OpenedBookcase" tags="" position="225,2725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
-The glass covering the bookcase slides open. Most of the books are just classic novels. However, the is one that looks like it has been place in upside down.
-[[Look at the book|ConferenceBook]]
-[[Go back to Sector 2 Landing|Sec2Landing]]
+The glass covering the bookcase slides open. Most of the books are just classic novels and old travel logs. However, there is one that looks like it has been placed in the bookcase upside down. The title of it is simply &quot;Kepler&quot;.
+[[Grab the book and open it|ConferenceBook]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="ConferenceBook" tags="" position="225,2875" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/conferencebookopen.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
