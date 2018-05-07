@@ -455,9 +455,10 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 document.body.style.backgroundImage= &quot;url(&#39;images/Doorlocked.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;&lt;if visited(&quot;Break Door Control&quot;) eq 0&gt;&gt;\
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 As you walk towards the control room door, you notice the red light indicating that the door is locked.
 
-You hear the female voice over the intercom say &quot;This area is off limits to you at this time commander&quot;
+You hear the female voice over the intercom say &quot;This area is off limits to you at this time commander.&quot;
 \
 &lt;&lt;set $linkText  to &quot;\&quot;If I am the Commander of this ship then I demand that you open this door!\&quot;&quot;&gt;&gt;
 &lt;&lt;link [[$linkText|Demand Open Control]]&gt;&gt;
@@ -478,22 +479,23 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;script&gt;&gt;
 document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;/script&gt;&gt;
-&lt;/div&gt;\&lt;&lt;/link&gt;&gt;\&lt;&lt;/if&gt;&gt;\
+&lt;/div&gt;&lt;&lt;/link&gt;&gt;\&lt;&lt;/if&gt;&gt;\
 &lt;&lt;else&gt;&gt;
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/Doorunlocked.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;&lt;/if&gt;&gt;\
-&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &lt;&lt;if visited(&quot;Break Door Control&quot;) eq 1 and variables().inventory[0] eq 0&gt;&gt;\
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Try not to break open the door this time, Commander, it clearly didn&#39;t work last time. You might want to try and find something that can open it.&quot;
 
-[[Go back to corridor|Examine corridor]]\ 
+[[Go back to corridor|Examine corridor]]&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if variables().inventory[0] eq 1&gt;&gt;\
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;The door has been unlocked, Commander.&quot;
 [[Go through door|AltHallway]]
-&lt;&lt;/if&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="Demand Open Control" tags="" position="1550,1125" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;&quot;Commander, you of all people should know how security on this ship works. Without a keycard, you cannot open this door.&quot; 
+&lt;/div&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Demand Open Control" tags="" position="1550,1125" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;&quot;Commander, you of all people should know how security on this ship works. Without a keycard, you cannot open this door.&quot; 
 [[Return to corridor|Examine corridor]] &lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Ask Respectfully Control" tags="" position="1550,800" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;&quot;Security on this ship is handled through a key card system. Entrance through this door requires a keycard.&quot;
 [[Return to corridor|Examine corridor]] &lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="Break Door Control" tags="" position="1550,950" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You kick at the door over and over then try to pry it open but to no avail. The heavy metal door is impenetrable. Suddenly you feel a static electricity fill the air around you and you feel the blood rush from your head right before it all fades to black... 
 \
