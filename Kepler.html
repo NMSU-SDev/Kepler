@@ -450,16 +450,10 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="15" name="Control Room Door" tags="AltEnding" position="1375,950" size="100,100">&lt;&lt;if visited(&quot;Break Door Control&quot;) eq 1 and variables().inventory[0] eq 0&gt;&gt;
+</tw-passagedata><tw-passagedata pid="15" name="Control Room Door" tags="AltEnding" position="1375,950" size="100,100">&lt;&lt;if variables().inventory[0] eq 0&gt;&gt;
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/Doorlocked.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;script&gt;&gt;
-document.body.style.backgroundImage= &quot;url(&#39;images/Doorunlocked.jpg&#39;)&quot;
-&lt;&lt;/script&gt;&gt;
-&lt;&lt;/if&gt;&gt;\
-&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &lt;&lt;if visited(&quot;Break Door Control&quot;) eq 0&gt;&gt;\
 As you walk towards the control room door, you notice the red light indicating that the door is locked.
 
@@ -484,17 +478,22 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;script&gt;&gt;
 document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;/script&gt;&gt;
-&lt;/div&gt;\
-&lt;&lt;/link&gt;&gt;\&lt;&lt;/if&gt;&gt;\
+&lt;/div&gt;\&lt;&lt;/link&gt;&gt;\&lt;&lt;/if&gt;&gt;\
+&lt;&lt;else&gt;&gt;
+&lt;&lt;script&gt;&gt;
+document.body.style.backgroundImage= &quot;url(&#39;images/Doorunlocked.jpg&#39;)&quot;
+&lt;&lt;/script&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &lt;&lt;if visited(&quot;Break Door Control&quot;) eq 1 and variables().inventory[0] eq 0&gt;&gt;\
 &quot;Try not to break open the door this time, Commander, it clearly didn&#39;t work last time. You might want to try and find something that can open it.&quot;
 
 [[Go back to corridor|Examine corridor]]\ 
 &lt;&lt;/if&gt;&gt;\
-&lt;&lt;if visited(&quot;Break Door Control&quot;) eq 1 and variables().inventory[0] eq 1&gt;&gt;\
+&lt;&lt;if variables().inventory[0] eq 1&gt;&gt;\
 &quot;The door has been unlocked, Commander.&quot;
-[[Go through door|AltHallway]]\
-&lt;&lt;/if&gt;&gt;\
+[[Go through door|AltHallway]]
+&lt;&lt;/if&gt;&gt;&lt;/div&gt;
 
 </tw-passagedata><tw-passagedata pid="16" name="Demand Open Control" tags="" position="1550,1125" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;&quot;Commander, you of all people should know how security on this ship works. Without a keycard, you cannot open this door.&quot; 
 [[Return to corridor|Examine corridor]] &lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Ask Respectfully Control" tags="" position="1550,800" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;&quot;Security on this ship is handled through a key card system. Entrance through this door requires a keycard.&quot;
@@ -702,7 +701,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/Brig.jpg&#39;)&quot;
 [[$linktext|Distrust]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="SystemCheck" tags="" position="1050,1250" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="38" name="Distrust" tags="" position="1200,1250" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="39" name="MyGReply" tags="" position="750,1100" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;The ship has an automated system that immediately teleports all crew members vital to the mission away from any life-threatening events on the ship. Fortunately, the system was able to materialize you in a unaffected part of the ship before the rest of the crew.&quot;
-&lt;&lt;set $linktext=&quot;\&quot;What about the rest of the crew? You said we only suffered 1/3 casualties.\&quot;&quot;&gt;&gt;
+&lt;&lt;set $linktext=&quot;\&quot;What about the rest of the crew? You said we only suffered moderate casualties.\&quot;&quot;&gt;&gt;
 [[$linktext|MyGReply2]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="MyGReply2" tags="" position="625,1100" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;I cannot confirm the exact cause of the crews disappearance but it seems as though the solar anomaly caused a malfunction with the teleportation system which could have teleported them anywhere within 100 miles of the ship. My scans show that there are no signs of life within the ship besides you, Commander.&quot;
