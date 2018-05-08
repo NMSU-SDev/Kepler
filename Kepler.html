@@ -220,6 +220,8 @@ div#memory_board > div{
 
 
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.game = {};
 window.game.memory_values = [];
 window.game.memory_tile_ids = [];
@@ -291,6 +293,8 @@ Array.prototype.memory_tile_shuffle = function( ){
 			
 		document.getElementById('memory_board').innerHTML = output;//set values for each tile
 };
+
+
 
 
 
@@ -840,7 +844,7 @@ document.body.style.backgroundImage=&quot;url(&#39;images/conference.jpg&#39;)&q
 &lt;&lt;/script&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 Inside of the conference room, there is a large conference table.
-&lt;&lt;if variables().inventory[0] eq 0&gt;&gt;\To your right there is a large bookcase with a glass cover. There is a keypad that looks like it will unlock the bookcase.\
+&lt;&lt;if variables().inventory[0] eq 0&gt;&gt;\To your right there is a large bookcase with a glass cover. There is a keypad that looks like it will unlock the bookcase.
 [[Use keypad to unlock bookcase|BookcasePuzzle]]&lt;&lt;/if&gt;&gt;
 [[Exit back into Sector 2 Landing|Sec2Landing]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="HighRankSec" tags="" position="500,2550" size="100,100">&lt;&lt;script&gt;&gt;
