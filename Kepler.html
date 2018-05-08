@@ -223,6 +223,7 @@ div#memory_board > div{
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.game = {};
 window.game.memory_values = [];
 window.game.memory_tile_ids = [];
@@ -294,6 +295,7 @@ Array.prototype.memory_tile_shuffle = function( ){
 			
 		document.getElementById('memory_board').innerHTML = output;//set values for each tile
 };
+
 
 
 
@@ -970,13 +972,55 @@ You open the misplace book and inside it you find a keycard.
 </tw-passagedata><tw-passagedata pid="65" name="CockpitPuzzle" tags="" position="500,2850" size="100,100">&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;
 
-&lt;&lt;set $puzzle = random(0)&gt;&gt;\
+&lt;&lt;set $puzzle = random(4)&gt;&gt;\
 &lt;&lt;if $puzzle eq 0&gt;&gt;\
 &lt;iframe src=&quot;sudoku/puzzle1/sudoku.html&quot; width=&quot;765px&quot; height=&quot;665px&quot;&gt;&lt;/iframe&gt;
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
 &lt;span id=&quot;submit&quot;&gt;
 &lt;&lt;button &quot;Submit&quot;&gt;&gt;
 &lt;&lt;if $p1 eq &quot;819345682&quot;&gt;&gt; 
+&lt;&lt;replace #text&gt;&gt;[[Enter cockpit|Cockpit]] &lt;&lt;/replace&gt;&gt;
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/button&gt;&gt;
+&lt;/span&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $puzzle eq 1&gt;&gt;\
+&lt;iframe src=&quot;sudoku/puzzle2/sudoku.html&quot; width=&quot;765px&quot; height=&quot;665px&quot;&gt;&lt;/iframe&gt;
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
+&lt;span id=&quot;submit&quot;&gt;
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;
+&lt;&lt;if $p1 eq &quot;947328861&quot;&gt;&gt; 
+&lt;&lt;replace #text&gt;&gt;[[Enter cockpit|Cockpit]] &lt;&lt;/replace&gt;&gt;
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/button&gt;&gt;
+&lt;/span&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $puzzle eq 2&gt;&gt;\
+&lt;iframe src=&quot;sudoku/puzzle3/sudoku.html&quot; width=&quot;765px&quot; height=&quot;665px&quot;&gt;&lt;/iframe&gt;
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
+&lt;span id=&quot;submit&quot;&gt;
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;
+&lt;&lt;if $p1 eq &quot;412265748&quot;&gt;&gt; 
+&lt;&lt;replace #text&gt;&gt;[[Enter cockpit|Cockpit]] &lt;&lt;/replace&gt;&gt;
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/button&gt;&gt;
+&lt;/span&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $puzzle eq 3&gt;&gt;\
+&lt;iframe src=&quot;sudoku/puzzle4/sudoku.html&quot; width=&quot;765px&quot; height=&quot;665px&quot;&gt;&lt;/iframe&gt;
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
+&lt;span id=&quot;submit&quot;&gt;
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;
+&lt;&lt;if $p1 eq &quot;761946839&quot;&gt;&gt; 
 &lt;&lt;replace #text&gt;&gt;[[Enter cockpit|Cockpit]] &lt;&lt;/replace&gt;&gt;
 &lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -1117,17 +1161,17 @@ You wake up in a daze on a cold, metal floor. You get up and begin to shake off 
 You can&#39;t seem to shake the feeling that you&#39;ve seen this all before.
 
 			ENDING 1: Deja Vu.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="TerminalQ2" tags="" position="1998.333333333333,501.66666666666663" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="TerminalQ2" tags="" position="1998,501" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/TerminalQ2.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You examine the terminal
 [[Return to Hallway|Quarters]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="TerminalQ6" tags="" position="2006.6666666666667,0" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="TerminalQ6" tags="" position="2006,0" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/TerminalQ6.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You examine the terminal
 [[Return to Hallway|Quarters]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="TerminalQ3" tags="" position="1998.3333333333335,363.3333333333333" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="TerminalQ3" tags="" position="1998,363" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/TerminalQ3.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You examine the terminal
