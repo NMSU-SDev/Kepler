@@ -222,6 +222,7 @@ div#memory_board > div{
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.game = {};
 window.game.memory_values = [];
 window.game.memory_tile_ids = [];
@@ -293,6 +294,7 @@ Array.prototype.memory_tile_shuffle = function( ){
 			
 		document.getElementById('memory_board').innerHTML = output;//set values for each tile
 };
+
 
 
 
@@ -514,18 +516,21 @@ document.body.style.backgroundImage= &quot;url(&#39;images/Brig.jpg&#39;)&quot;
 You wake up in a small, cold cell. A door seals the cell shut, but you see a small screen with a keypad. [[Operate Keypad|Puzzle]]
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="20" name="Q5" tags="" position="1800,125" size="100,100">&lt;&lt;script&gt;&gt;
-document.body.style.backgroundImage= &quot;url(&#39;images/room2.jpg&#39;)&quot;
+document.body.style.backgroundImage= &quot;url(&#39;images/room2wTerminal.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
-&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You enter the room
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You enter the room and immediately hear a distorted voice over the intercom,
+&quot;Exception... audio file not found&quot;
 [[Return to Hallway|Quarters]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="Q6" tags="" position="1800,0" size="100,100">&lt;&lt;script&gt;&gt;
-document.body.style.backgroundImage= &quot;url(&#39;images/room2.jpg&#39;)&quot;
+document.body.style.backgroundImage= &quot;url(&#39;images/room2wTerminal.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
-&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You enter the room
-[[Return to Hallway|Quarters]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="Q3" tags="" position="1800,375" size="100,100">&lt;&lt;script&gt;&gt;
-document.body.style.backgroundImage= &quot;url(&#39;images/room2.jpg&#39;)&quot;
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You enter the room and notice another terminal
+[[Return to Hallway|Quarters]]
+[[Examine Terminal|TerminalQ6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="Q3" tags="" position="1800,375" size="100,100">&lt;&lt;script&gt;&gt;
+document.body.style.backgroundImage= &quot;url(&#39;images/room2wTerminal.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
-&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You enter the room
-[[Return to Hallway|Quarters]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="Q4" tags="" position="1800,250" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You enter the room and notice another terminal
+[[Return to Hallway|Quarters]]
+[[Examine Terminal|TerminalQ3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="Q4" tags="" position="1800,250" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/room1.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;&lt;if $inventory[0] eq 0&gt;&gt;
@@ -542,10 +547,11 @@ document.body.style.backgroundImage= &quot;url(&#39;images/room1.jpg&#39;)&quot;
 document.body.style.backgroundImage= &quot;url(&#39;images/room2wpoem.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;The room you enter is similar to the one you woke up in and again you notice something on top of the platform in the center of the room. This time, however the item you find is not a keycard but rather a poem written on a piece of paper. [[Read poem|Poem]] [[Return to Hallway|Quarters]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="Q2" tags="" position="1800,500" size="100,100">&lt;&lt;script&gt;&gt;
-document.body.style.backgroundImage= &quot;url(&#39;images/room2.jpg&#39;)&quot;
+document.body.style.backgroundImage= &quot;url(&#39;images/room2wTerminal.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
-&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You enter the room
-[[Return to Hallway|Quarters]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="Q5Door" tags="" position="1600,125" size="100,100">&lt;&lt;if visited(&quot;Q2&quot;) eq 0&gt;&gt;
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You enter the room and notice a screen with what looks like an old terminal but there is no keyboard or input device to be found
+[[Return to Hallway|Quarters]]
+[[Examine Terminal|TerminalQ2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="Q5Door" tags="" position="1600,125" size="100,100">&lt;&lt;if visited(&quot;Q2&quot;) eq 0&gt;&gt;
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/DoorQ5locked.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
@@ -1111,6 +1117,21 @@ You wake up in a daze on a cold, metal floor. You get up and begin to shake off 
 You can&#39;t seem to shake the feeling that you&#39;ve seen this all before.
 
 			ENDING 1: Deja Vu.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="TerminalQ2" tags="" position="1998.333333333333,501.66666666666663" size="100,100">&lt;&lt;script&gt;&gt;
+document.body.style.backgroundImage= &quot;url(&#39;images/TerminalQ2.png&#39;)&quot;
+&lt;&lt;/script&gt;&gt;
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You examine the terminal
+[[Return to Hallway|Quarters]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="TerminalQ6" tags="" position="2006.6666666666667,0" size="100,100">&lt;&lt;script&gt;&gt;
+document.body.style.backgroundImage= &quot;url(&#39;images/TerminalQ6.png&#39;)&quot;
+&lt;&lt;/script&gt;&gt;
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You examine the terminal
+[[Return to Hallway|Quarters]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="TerminalQ3" tags="" position="1998.3333333333335,363.3333333333333" size="100,100">&lt;&lt;script&gt;&gt;
+document.body.style.backgroundImage= &quot;url(&#39;images/TerminalQ3.png&#39;)&quot;
+&lt;&lt;/script&gt;&gt;
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You examine the terminal
+[[Return to Hallway|Quarters]]
 &lt;/div&gt;</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
