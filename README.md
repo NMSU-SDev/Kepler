@@ -22,3 +22,11 @@ When making changes to the Twine story and testing it in the web browser, rather
 ## Remote access to the game
 The most recent deployed version of the game can be accessed at this [link](http://web.nmsu.edu/~iancj/Kepler.html). If the latest build is not at this link, feel free ask for the most up-to-date version of the game to be deployed.
 
+## Playing the game locally
+While the game can be played remotely using the above link, the size of the game and the image assets can cause some loading issues depending on connection speed and how well the NMSU webhosting service is working. For the best experience, it is best to clone the repo and play the game locally in your browser. The steps to download and play the game are as follows:
+1. Clone or download the repo to your machine and place it in the directory of your choice.
+2. Do not move any of the files out of the directory or some parts of the game may no longer function.
+3. Open the Kepler.html file in the browser of your choice.
+4. The game should start at the first passage ready to play!
+5. You can save your progress using the save function on the sidebar. It can be saved locally in a .save file or you can save it within your browser. We recommend saving it locally since clearing your browser cache will result in the save file being deleted.
+6. Enjoy the game!
