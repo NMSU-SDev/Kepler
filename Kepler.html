@@ -227,6 +227,7 @@ div#memory_board > div{
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.game = {};
 window.game.memory_values = [];
 window.game.memory_tile_ids = [];
@@ -298,6 +299,7 @@ Array.prototype.memory_tile_shuffle = function( ){
 			
 		document.getElementById('memory_board').innerHTML = output;//set values for each tile
 };
+
 
 
 
@@ -1113,12 +1115,23 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &quot;So, Commander, what is your decision?&quot;
 &lt;/div&gt;
 &lt;&lt;button &quot;Ready Ship-to-Surface Pods&quot;&gt;&gt;
-&lt;&lt;goto GoodKarmaEnding&gt;&gt;
+
+&lt;&lt;if $karma ge 25&gt;&gt;
+&lt;&lt;goto GoodKarmaGoodEnding&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $karma gt -25 and $karma lt 25&gt;&gt;
+&lt;&lt;goto NeutralKarmaGoodEnding&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
+
+&lt;&lt;if $karma le -25&gt;&gt;
+&lt;goto BadKarmaGoodEnding&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;button &quot;Emergency Cargo Release&quot;&gt;&gt;
 
-&lt;&lt;if $karma ge -25&gt;&gt;
+&lt;&lt;if $karma ge -25 and $karma le 25&gt;&gt;
 &lt;&lt;goto NeutralKarmaEnding&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -1128,7 +1141,7 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 
 &lt;&lt;/button&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="72" name="GoodKarmaEnding" tags="GoodEnding" position="325,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+</tw-passagedata><tw-passagedata pid="72" name="GoodKarmaGoodEnding" tags="GoodEnding" position="325,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Very well, Commander. I will begin prepping the research equipment for deployment. Please go to the other side of the room and enter the ship-to-surface pod and run through the system check.&quot;
 [[Go to pod|GoodKarmaEnding2]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="BadKarmaEnding" tags="BadEnding" position="700,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
