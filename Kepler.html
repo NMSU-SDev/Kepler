@@ -636,86 +636,83 @@ The door is unlocked. [[Enter|Q2]]
 &lt;&lt;endif&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="Poem" tags="" position="2000,625" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/readpoem.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
-&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;  [[Return|Quarters]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Puzzle" tags="" position="1950,775" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;  [[Return|Quarters]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Puzzle" tags="" position="1950,775" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;\
 
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/Brig.jpg&#39;)&quot;
-&lt;&lt;/script&gt;&gt;
-&lt;&lt;set $puzzle = random(4)&gt;&gt;
-&lt;&lt;if $puzzle eq 0&gt;&gt;
-&lt;iframe src=&quot;memGames/memGame_ALIENS.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
+&lt;&lt;/script&gt;&gt;\
+&lt;&lt;set $puzzle = random(4)&gt;&gt;\
+&lt;&lt;if $puzzle eq 0&gt;&gt;\
+&lt;iframe src=&quot;memGames/memGame_ALIENS.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;ALIENS&quot;&gt;&gt; 
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;ALIENS&quot;&gt;&gt;
 &lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;\
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
 &lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 1&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_PLANET.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
+&lt;iframe src=&quot;memGames/memGame_PLANET.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
 &lt;&lt;if $p1 eq &quot;PLANET&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-\
+&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 2&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_SECRET.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
+&lt;iframe src=&quot;memGames/memGame_SECRET.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
 &lt;&lt;if $p1 eq &quot;SECRET&quot;&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-\
+&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 3&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_SYSTEM.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
+&lt;iframe src=&quot;memGames/memGame_SYSTEM.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
 &lt;&lt;if $p1 eq &quot;SYSTEM&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-\
+&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 4&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_MATRIX.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
+&lt;iframe src=&quot;memGames/memGame_MATRIX.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
 &lt;&lt;if $p1 eq &quot;MATRIX&quot;&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="OutOfJail" tags="" position="2100,775" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;
+&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="34" name="OutOfJail" tags="" position="2100,775" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;maintheme&quot; loop play&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;&quot;Next time, don&#39;t attempt to damage the ship.&quot;
 [[Go back to corridor|Examine corridor]]
