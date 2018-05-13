@@ -102,7 +102,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="Kepler" startnode="1" creator="Twine" creator-version="2.2.1" ifid="E8795B13-C3DF-4E1E-97B8-9DF0BBE7E012" zoom="1" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/***********************
+	<div id="store-area" hidden><tw-storydata name="Kepler" startnode="1" creator="Twine" creator-version="2.2.1" ifid="E8795B13-C3DF-4E1E-97B8-9DF0BBE7E012" zoom="0.6" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/***********************
 *  Karma meter styling 
 ***********************/
 
@@ -228,6 +228,7 @@ div#memory_board > div{
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.game = {};
 window.game.memory_values = [];
 window.game.memory_tile_ids = [];
@@ -299,6 +300,7 @@ Array.prototype.memory_tile_shuffle = function( ){
 			
 		document.getElementById('memory_board').innerHTML = output;//set values for each tile
 };
+
 
 
 
@@ -634,87 +636,84 @@ The door is unlocked. [[Enter|Q2]]
 &lt;&lt;endif&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="Poem" tags="" position="2000,625" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/readpoem.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
-&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;  [[Return|Quarters]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Puzzle" tags="" position="1950,775" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;  [[Return|Quarters]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Puzzle" tags="" position="1950,775" size="100,100">&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;\
 
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/Brig.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;\
 &lt;&lt;set $puzzle = random(4)&gt;&gt;\
 &lt;&lt;if $puzzle eq 0&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_ALIENS.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;ALIENS&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-\
+&lt;iframe src=&quot;memGames/memGame_ALIENS.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;ALIENS&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 1&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_PLANET.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
+&lt;iframe src=&quot;memGames/memGame_PLANET.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
 &lt;&lt;if $p1 eq &quot;PLANET&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-\
+&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 2&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_SECRET.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;SECRET&quot;&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-\
+&lt;iframe src=&quot;memGames/memGame_SECRET.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;SECRET&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 3&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_SYSTEM.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;SYSTEM&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-\
+&lt;iframe src=&quot;memGames/memGame_SYSTEM.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;SYSTEM&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 4&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_MATRIX.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;MATRIX&quot;&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="OutOfJail" tags="" position="2100,775" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;
+&lt;iframe src=&quot;memGames/memGame_MATRIX.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;MATRIX&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Open Door|OutOfJail]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="34" name="OutOfJail" tags="" position="2100,775" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;maintheme&quot; loop play&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;&quot;Next time, don&#39;t attempt to damage the ship.&quot;
 [[Go back to corridor|Examine corridor]]
@@ -878,87 +877,84 @@ You find yourself in a long hallway with only one door at the end of the hallway
 &quot;Commander, at the end of this hallway is the cockpit. Before you enter there, you need to have made your decision regarding the mission. Now that you are in the high-ranking section, misuse of any security systems cannot be overridden by me. Please make sure that you have any necessary security keycards before continuing.&quot;
 [[Continue down hallway|HighRankSec2]]
 [[Go back to Sector 2 Landing|Sec2Landing]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="BookcasePuzzle" tags="" position="225,2575" size="100,100">&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="BookcasePuzzle" tags="" position="225,2575" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;\
 
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/conference.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;\
 &lt;&lt;set $puzzle = random(4)&gt;&gt;\
 &lt;&lt;if $puzzle eq 0&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_GALAXY.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;GALAXY&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-\
+&lt;iframe src=&quot;memGames/memGame_GALAXY.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;GALAXY&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 1&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_ANSWER.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;ANSWER&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-\
+&lt;iframe src=&quot;memGames/memGame_ANSWER.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;ANSWER&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 2&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_COSMOS.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;COSMOS&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-\
+&lt;iframe src=&quot;memGames/memGame_COSMOS.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;COSMOS&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 3&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_UNLOCK.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;UNLOCK&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-\
+&lt;iframe src=&quot;memGames/memGame_UNLOCK.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;UNLOCK&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 4&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_KEPLER.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;KEPLER&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="62" name="OpenedBookcase" tags="" position="225,2725" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;
+&lt;iframe src=&quot;memGames/memGame_KEPLER.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;KEPLER&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="62" name="OpenedBookcase" tags="" position="225,2725" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;midgametheme&quot; loop play&gt;&gt;
 
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -983,66 +979,67 @@ You open the misplace book and inside it you find a keycard.
 [[Enter password into keypad|CockpitPuzzle]]
 [[Go back to Section 2 Landing|Sec2Landing]]
 &lt;&lt;/if&gt;&gt;&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="65" name="CockpitPuzzle" tags="" position="500,2850" size="100,100">&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;
+</tw-passagedata><tw-passagedata pid="65" name="CockpitPuzzle" tags="" position="500,2850" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;\
 
-&lt;&lt;set $puzzle = random(4)&gt;&gt;\
+&lt;&lt;set $puzzle = random(3)&gt;&gt;\
 &lt;&lt;if $puzzle eq 0&gt;&gt;\
-&lt;iframe src=&quot;sudoku/puzzle1/sudoku.html&quot; width=&quot;765px&quot; height=&quot;665px&quot;&gt;&lt;/iframe&gt;
+&lt;iframe src=&quot;sudoku/puzzle1/sudoku.html&quot; width=&quot;600px&quot; height=&quot;500px&quot;&gt;\&lt;/iframe&gt;\
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;819345682&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Enter cockpit|Cockpit]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;819345682&quot;&gt;&gt;\ 
+&lt;&lt;replace #text&gt;&gt;[[Enter Cockpit|Cockpit]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 1&gt;&gt;\
-&lt;iframe src=&quot;sudoku/puzzle2/sudoku.html&quot; width=&quot;765px&quot; height=&quot;665px&quot;&gt;&lt;/iframe&gt;
+&lt;iframe src=&quot;sudoku/puzzle2/sudoku.html&quot; width=&quot;600px&quot; height=&quot;500px&quot;&gt;\&lt;/iframe&gt;\
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;947328861&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Enter cockpit|Cockpit]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;947328861&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Enter Cockpit|Cockpit]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
 &lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 2&gt;&gt;\
-&lt;iframe src=&quot;sudoku/puzzle3/sudoku.html&quot; width=&quot;765px&quot; height=&quot;665px&quot;&gt;&lt;/iframe&gt;
+&lt;iframe src=&quot;sudoku/puzzle3/sudoku.html&quot; width=&quot;600px&quot; height=&quot;500px&quot;&gt;\&lt;/iframe&gt;\
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;412265748&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Enter cockpit|Cockpit]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;412265748&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Enter Cockpit|Cockpit]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;\&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 3&gt;&gt;\
-&lt;iframe src=&quot;sudoku/puzzle4/sudoku.html&quot; width=&quot;765px&quot; height=&quot;665px&quot;&gt;&lt;/iframe&gt;
+&lt;iframe src=&quot;sudoku/puzzle4/sudoku.html&quot; width=&quot;600px&quot; height=&quot;500px&quot;&gt;\&lt;/iframe&gt;\
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;761946839&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Enter cockpit|Cockpit]] &lt;&lt;/replace&gt;&gt;
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;761946839&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Enter Cockpit|Cockpit]] &lt;&lt;/replace&gt;&gt;\
 &lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="66" name="Cockpit" tags="" position="500,3000" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;\&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="66" name="Cockpit" tags="" position="500,3000" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;midgametheme&quot; loop play&gt;&gt;
 
 &lt;&lt;set $inventory[0]--&gt;&gt;
@@ -1219,67 +1216,67 @@ document.body.style.backgroundImage= &quot;url(&#39;images/Exploit.jpg&#39;)&quo
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;Confused by the apparent lack of physical laws, you can hardly focus on the letters typing across the screen. Remembering your training in computation you recognize that the program is waiting for inputs of some sort when another image materializes in front of you...
 
 
-[[Continue|ExploitInputs]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="ExploitInputs" tags="AltEnding" position="2000,1331" size="100,100">&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;
+[[Continue|ExploitInputs]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="ExploitInputs" tags="AltEnding" position="2000,1331" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;\
 
-&lt;&lt;set $puzzle = random(4)&gt;&gt;\
+&lt;&lt;set $puzzle = random(3)&gt;&gt;\
 &lt;&lt;if $puzzle eq 0&gt;&gt;\
-&lt;iframe src=&quot;sudoku/puzzle1/sudoku.html&quot; width=&quot;765px&quot; height=&quot;665px&quot;&gt;&lt;/iframe&gt;
+&lt;iframe src=&quot;sudoku/puzzle1/sudoku.html&quot; width=&quot;600px&quot; height=&quot;500px&quot;&gt;\&lt;/iframe&gt;\
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;819345682&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Enter Control Room|Control]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;819345682&quot;&gt;&gt;\ 
+&lt;&lt;replace #text&gt;&gt;[[Enter Control Room|Control]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 1&gt;&gt;\
-&lt;iframe src=&quot;sudoku/puzzle2/sudoku.html&quot; width=&quot;765px&quot; height=&quot;665px&quot;&gt;&lt;/iframe&gt;
+&lt;iframe src=&quot;sudoku/puzzle2/sudoku.html&quot; width=&quot;600px&quot; height=&quot;500px&quot;&gt;\&lt;/iframe&gt;\
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;947328861&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Enter Control Room|Control]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;947328861&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Enter Control Room|Control]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
 &lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 2&gt;&gt;\
-&lt;iframe src=&quot;sudoku/puzzle3/sudoku.html&quot; width=&quot;765px&quot; height=&quot;665px&quot;&gt;&lt;/iframe&gt;
+&lt;iframe src=&quot;sudoku/puzzle3/sudoku.html&quot; width=&quot;600px&quot; height=&quot;500px&quot;&gt;\&lt;/iframe&gt;\
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;412265748&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Enter Control Room|Control]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;412265748&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Enter Control Room|Control]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;\&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 3&gt;&gt;\
-&lt;iframe src=&quot;sudoku/puzzle4/sudoku.html&quot; width=&quot;765px&quot; height=&quot;665px&quot;&gt;&lt;/iframe&gt;
+&lt;iframe src=&quot;sudoku/puzzle4/sudoku.html&quot; width=&quot;600px&quot; height=&quot;500px&quot;&gt;\&lt;/iframe&gt;\
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;761946839&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Enter Control Room|Control]] &lt;&lt;/replace&gt;&gt;
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;761946839&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Enter Control Room|Control]] &lt;&lt;/replace&gt;&gt;\
 &lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="86" name="Control" tags="AltEnding" position="2165,1329" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;\&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="86" name="Control" tags="AltEnding" position="2165,1329" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/debug.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;The door opens and as you walk through it, the room seems to dematerialize around you, leaving you in complete darkness. White letters begin to appear in front of your eyes. You feel a strange familiarity and realize you can type words simply by thinking what it is you want to say. The text in front of you seems to show some system messeges.
