@@ -1,3 +1,3 @@
-.s0,.s1,.s2,.s3 {width:60pt; font-size:30pt;} /* givens */
-.d0,.d1,.d2,.d3 {width:60pt; font-size:25.5pt;} /* variables */
-.c0,.c1,.c2,.c3,.e0,.e1,.e2,.e3,.f0,.f1,.f2,.f3,.g0,.g1,.g2,.g3,.h0,.h1,.h2,.h3,.i0,.i1,.i2,.i3 {width:45pt; height:48pt;} /* cells */
+.s0,.s1,.s2,.s3 {width:45pt; font-size:15pt;} /* givens */
+.d0,.d1,.d2,.d3 {width:45pt; font-size:10.5pt;} /* variables */
+.c0,.c1,.c2,.c3,.e0,.e1,.e2,.e3,.f0,.f1,.f2,.f3,.g0,.g1,.g2,.g3,.h0,.h1,.h2,.h3,.i0,.i1,.i2,.i3 {width:30pt; height:33pt;} /* cells */
