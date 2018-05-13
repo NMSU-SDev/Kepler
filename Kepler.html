@@ -229,6 +229,7 @@ div#memory_board > div{
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.game = {};
 window.game.memory_values = [];
 window.game.memory_tile_ids = [];
@@ -320,6 +321,7 @@ Array.prototype.memory_tile_shuffle = function( ){
 
 
 
+
 </script><tw-tag name="Core" color="purple"></tw-tag>,<tw-tag name="BGProcess" color="red"></tw-tag>,<tw-tag name="AltEnding" color="blue"></tw-tag>,<tw-tag name="GoodEnding" color="green"></tw-tag>,<tw-tag name="NeutralEnding" color="yellow"></tw-tag>,<tw-tag name="BadEnding" color="red"></tw-tag><tw-passagedata pid="1" name="Start" tags="Core" position="300,25" size="200,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
@@ -361,8 +363,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/startbackground.jpg&#
 &lt;&lt;endif&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You notice a large [[window|Window]] on the other side of the room and behind you there is a large [[door|Door]]. \
 &lt;&lt;if visited(&quot;Desk&quot;) eq 0 and variables().inventory[0] eq 0&gt;&gt;To the front, you notice a [[desk|Desk]].
-&lt;&lt;/if&gt;&gt;&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="6" name="StoryCaption" tags="" position="50,225" size="100,100">/****************************
+&lt;&lt;/if&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="StoryCaption" tags="" position="50,225" size="100,100">/****************************
 * Karma meter
 ****************************/\
 \
@@ -514,6 +515,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/Doorunlocked.jpg&#39;
 [[Go back to corridor|Examine corridor]]&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if variables().inventory[0] eq 1&gt;&gt;\
+&lt;&lt;set $inventory[0]--&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;The door has been unlocked, Commander. However you should know that I am not equiped to assist you beyond this point. As soon as you step through this door, you are on your own&quot;
 [[Go through door|AltHallway]]
