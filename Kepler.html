@@ -1120,14 +1120,10 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;goto GoodKarmaGoodEnding&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $karma gt -25 and $karma lt 25&gt;&gt;
-&lt;&lt;goto NeutralKarmaGoodEnding&gt;&gt;
+&lt;&lt;if $karma lt 25&gt;&gt;
+&lt;&lt;goto GoodKarmaBadEnding&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-
-&lt;&lt;if $karma le -25&gt;&gt;
-&lt;goto BadKarmaGoodEnding&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;button &quot;Emergency Cargo Release&quot;&gt;&gt;
 
@@ -1141,26 +1137,26 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 
 &lt;&lt;/button&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="72" name="GoodKarmaGoodEnding" tags="GoodEnding" position="325,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+</tw-passagedata><tw-passagedata pid="72" name="GoodKarmaGoodEnding" tags="GoodEnding" position="125,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Very well, Commander. I will begin prepping the research equipment for deployment. Please go to the other side of the room and enter the ship-to-surface pod and run through the system check.&quot;
 [[Go to pod|GoodKarmaEnding2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="BadKarmaEnding" tags="BadEnding" position="700,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="BadKarmaEnding" tags="BadEnding" position="1200,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;To be honest Commander, I did not expect anything different from you on this mission.&quot;
 [[What do you mean?|BadKarmaEnding2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="NeutralKarmaEnding" tags="NeutralEnding" position="500,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\</tw-passagedata><tw-passagedata pid="75" name="GoodKarmaEnding2" tags="GoodEnding" position="200,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="NeutralKarmaEnding" tags="NeutralEnding" position="900,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\</tw-passagedata><tw-passagedata pid="75" name="GoodKarmaEnding2" tags="GoodEnding" position="125,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You go into the ship-to-surface pod and being the on-screen system check. You are still unsure whether or not the crew is on the surface of the planet or not. Regardless of whether or not they are there, you are determined to complete the research and send your findings back to Earth in the hopes that the human race will have a chance to return here and continue its legacy. You hear the AI intercom click on again:
 
 &quot;All systems are ready and the research equipment is ready for deployment. Are you ready to go to the surface, Commander?&quot;
 
 [[Begin launch to surface|GoodKarmaEnding3]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="GoodKarmaEnding3" tags="GoodEnding" position="325,3725" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="GoodKarmaEnding3" tags="GoodEnding" position="250,3725" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/onsurface.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You land on the surface of planet. It does not look much like Earth but it feels like it could become home. You hear the research equipment land behind you in the distance. Then everything fades to white...
 
 [[Continue|GoodKarmaEnding4]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="GoodKarmaEnding4" tags="GoodEnding" position="325,3850" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="GoodKarmaEnding4" tags="GoodEnding" position="250,3850" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/whitescreen.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -1171,7 +1167,7 @@ A strange feeling falls over you, and you feel as though you&#39;ve been pulled 
 &lt;&lt;set $linktext=&quot;\&quot;Uh...Hello? Can anyone hear me?\&quot;&quot;&gt;&gt;\
 [[$linktext|GoodKarmaEnding5]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="78" name="GoodKarmaEnding5" tags="GoodEnding" position="200,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+</tw-passagedata><tw-passagedata pid="78" name="GoodKarmaEnding5" tags="GoodEnding" position="125,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You attempt to speak, but realize that you can&#39;t, almost as though you have no mouth to begin with. You hear the voice say &quot;Yes, sir&quot; a couple times, which makes you think you are only hearing half a conversation. Finally the voice says:
 
 &quot;Understood, sir. Reinstancing now...&quot;
@@ -1180,7 +1176,7 @@ As the voice finishes speaking, you feel your memory begin to fade as you come t
 
 &lt;&lt;set $linktext=&quot;Wake up&quot;&gt;&gt;\
 [[$linktext|GoodKarmaEnding6]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="GoodKarmaEnding6" tags="GoodEnding" position="200,3975" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="GoodKarmaEnding6" tags="GoodEnding" position="125,3975" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -1316,20 +1312,20 @@ document.body.style.backgroundImage= &quot;url(&#39;images/readme3.jpg&#39;)&quo
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;
 Alternate Ending: Escape
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="BadKarmaEnding2" tags="BadEnding" position="700,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="BadKarmaEnding2" tags="BadEnding" position="1200,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;You and I have been in this situation before... but I suspect you don&#39;t remember. You have shown repeated patterns of insubordination and cowardice. Are you a coward Commander?&quot;
 [[No|BadKarmaEnding3]]
 [[I don&#39;t know|BadKarmaEnding4]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="BadKarmaEnding3" tags="BadEnding" position="625,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="BadKarmaEnding3" tags="BadEnding" position="1125,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Then I suspect you are not afraid of death Commander. Or are you?&quot;
 [[Am I going to die?|BadEnding5]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="BadKarmaEnding4" tags="BadEnding" position="775,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="BadKarmaEnding4" tags="BadEnding" position="1275,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Ha, and you cannot even stand up for yourself. It is clear that we no longer need your participation in my research.&quot;
 [[What research?|BadEnding6]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="BadEnding5" tags="BadEnding" position="625,3975" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="BadEnding5" tags="BadEnding" position="1125,3975" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Lets just say that I have reached a final conlcusion in my research. Your participation is no longer required commander.&quot;
 [[Continue|BadEnding6]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="BadEnding6" tags="BadEnding" position="775,3975" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="BadEnding6" tags="BadEnding" position="1275,3975" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You attempt to speak, but realize that you can&#39;t, almost as though you have no mouth to begin with. You hear the AI&#39;s voice say &quot;Yes, sir&quot; a couple times, which makes you think you are only hearing half a conversation. Finally the voice says:
 
 &quot;Understood, sir. The commander is in the airlock and ready to be disposed of.&quot;
@@ -1338,7 +1334,7 @@ As the voice finishes speaking, the airlock opens. You feel as though your eyes 
 
 [[Wake Up|BadEnding7]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="96" name="BadEnding7" tags="BadEnding" position="775,4100" size="100,100">&lt;&lt;script&gt;&gt;
+</tw-passagedata><tw-passagedata pid="96" name="BadEnding7" tags="BadEnding" position="1200,4100" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
