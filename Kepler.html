@@ -877,9 +877,9 @@ You find yourself in a long hallway with only one door at the end of the hallway
 &quot;Commander, at the end of this hallway is the cockpit. Before you enter there, you need to have made your decision regarding the mission. Now that you are in the high-ranking section, misuse of any security systems cannot be overridden by me. Please make sure that you have any necessary security keycards before continuing.&quot;
 [[Continue down hallway|HighRankSec2]]
 [[Go back to Sector 2 Landing|Sec2Landing]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="BookcasePuzzle" tags="" position="225,2575" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="BookcasePuzzle" tags="" position="225,2575" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;\
 
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/conference.jpg&#39;)&quot;
@@ -887,7 +887,7 @@ document.body.style.backgroundImage=&quot;url(&#39;images/conference.jpg&#39;)&q
 &lt;&lt;set $puzzle = random(4)&gt;&gt;\
 &lt;&lt;if $puzzle eq 0&gt;&gt;\
 &lt;iframe src=&quot;memGames/memGame_GALAXY.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
 &lt;span id=&quot;submit&quot;&gt;\
 &lt;&lt;button &quot;Submit&quot;&gt;&gt;\
 &lt;&lt;if $p1 eq &quot;GALAXY&quot;&gt;&gt;\
@@ -901,7 +901,7 @@ document.body.style.backgroundImage=&quot;url(&#39;images/conference.jpg&#39;)&q
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 1&gt;&gt;\
 &lt;iframe src=&quot;memGames/memGame_ANSWER.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
 &lt;span id=&quot;submit&quot;&gt;\
 &lt;&lt;button &quot;Submit&quot;&gt;&gt;\
 &lt;&lt;if $p1 eq &quot;ANSWER&quot;&gt;&gt;\
@@ -914,49 +914,47 @@ document.body.style.backgroundImage=&quot;url(&#39;images/conference.jpg&#39;)&q
 &lt;/span&gt;\
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 2&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_COSMOS.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;COSMOS&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-\
+&lt;iframe src=&quot;memGames/memGame_COSMOS.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;COSMOS&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 3&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_UNLOCK.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;UNLOCK&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-\
+&lt;iframe src=&quot;memGames/memGame_UNLOCK.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;UNLOCK&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $puzzle eq 4&gt;&gt;\
-&lt;iframe src=&quot;memGames/memGame_KEPLER.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;
-&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;
-&lt;span id=&quot;submit&quot;&gt;
-&lt;&lt;button &quot;Submit&quot;&gt;&gt;
-&lt;&lt;if $p1 eq &quot;KEPLER&quot;&gt;&gt; 
-&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;
-&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="62" name="OpenedBookcase" tags="" position="225,2725" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;
+&lt;iframe src=&quot;memGames/memGame_KEPLER.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;KEPLER&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Open Bookcase|OpenedBookcase]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="62" name="OpenedBookcase" tags="" position="225,2725" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;midgametheme&quot; loop play&gt;&gt;
 
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
