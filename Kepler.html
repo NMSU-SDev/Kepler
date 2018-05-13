@@ -102,7 +102,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="Kepler" startnode="1" creator="Twine" creator-version="2.2.1" ifid="E8795B13-C3DF-4E1E-97B8-9DF0BBE7E012" zoom="1" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/***********************
+	<div id="store-area" hidden><tw-storydata name="Kepler" startnode="1" creator="Twine" creator-version="2.2.1" ifid="E8795B13-C3DF-4E1E-97B8-9DF0BBE7E012" zoom="0.6" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/***********************
 *  Karma meter styling 
 ***********************/
 
@@ -228,6 +228,7 @@ div#memory_board > div{
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.game = {};
 window.game.memory_values = [];
 window.game.memory_tile_ids = [];
@@ -299,6 +300,7 @@ Array.prototype.memory_tile_shuffle = function( ){
 			
 		document.getElementById('memory_board').innerHTML = output;//set values for each tile
 };
+
 
 
 
@@ -986,7 +988,7 @@ You open the misplace book and inside it you find a keycard.
 </tw-passagedata><tw-passagedata pid="65" name="CockpitPuzzle" tags="" position="500,2850" size="100,100">&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;
 
-&lt;&lt;set $puzzle = random(4)&gt;&gt;\
+&lt;&lt;set $puzzle = random(3)&gt;&gt;\
 &lt;&lt;if $puzzle eq 0&gt;&gt;\
 &lt;iframe src=&quot;sudoku/puzzle1/sudoku.html&quot; width=&quot;765px&quot; height=&quot;665px&quot;&gt;&lt;/iframe&gt;
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
@@ -1219,10 +1221,11 @@ document.body.style.backgroundImage= &quot;url(&#39;images/Exploit.jpg&#39;)&quo
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;Confused by the apparent lack of physical laws, you can hardly focus on the letters typing across the screen. Remembering your training in computation you recognize that the program is waiting for inputs of some sort when another image materializes in front of you...
 
 
-[[Continue|ExploitInputs]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="ExploitInputs" tags="AltEnding" position="2000,1331" size="100,100">&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;
+[[Continue|ExploitInputs]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="ExploitInputs" tags="AltEnding" position="2000,1331" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;
+&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;
 
-&lt;&lt;set $puzzle = random(4)&gt;&gt;\
+&lt;&lt;set $puzzle = random(3)&gt;&gt;\
 &lt;&lt;if $puzzle eq 0&gt;&gt;\
 &lt;iframe src=&quot;sudoku/puzzle1/sudoku.html&quot; width=&quot;765px&quot; height=&quot;665px&quot;&gt;&lt;/iframe&gt;
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
