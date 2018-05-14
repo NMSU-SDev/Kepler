@@ -342,7 +342,9 @@ document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.j
 *[1]=hint credit
 *[2]=karma credit
 --&gt;
-&lt;&lt;set $inventory=[0,0,0]&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Window" tags="" position="100,375" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;&lt;set $inventory=[0,0,0]&gt;&gt;
+
+&lt;&lt;set $seconds to 90&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Window" tags="" position="100,375" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startwindow.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You look out through the thick glass pane to see nothing but a large, blue planet with a star peeking just over the horizon.
@@ -1160,7 +1162,13 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 
 &lt;&lt;set $linktext=&quot;\&quot;What do you mean?\&quot;&quot;&gt;&gt;\
 [[$linktext|BadKarmaEnding2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="NeutralKarmaEnding" tags="NeutralEnding" position="828.3333333333334,3601.6666666666665" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\</tw-passagedata><tw-passagedata pid="75" name="GoodKarmaEnding2" tags="GoodEnding" position="125,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="NeutralKarmaEnding" tags="NeutralEnding" position="730,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&quot;Did you really think that that would work?&quot;
+
+&lt;&lt;set $linktext=&quot;\&quot;What are you talking about?\&quot;&quot;&gt;&gt;\
+[[$linktext|NeutralKarmaEnding2]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="75" name="GoodKarmaEnding2" tags="GoodEnding" position="125,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You go into the ship-to-surface pod and being the on-screen system check. You are still unsure whether or not the crew is on the surface of the planet or not. Regardless of whether or not they are there, you are determined to complete the research and send your findings back to Earth in the hopes that the human race will have a chance to return here and continue its legacy. You hear the AI intercom click on again:
 
 &quot;All systems are ready and the research equipment is ready for deployment. Are you ready to go to the surface, Commander?&quot;
@@ -1327,7 +1335,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/readme2.jpg&#39;)&quo
 document.body.style.backgroundImage= &quot;url(&#39;images/readme3.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
-			ENDING 4: The Truth
+			ENDING 6: The Truth
 &lt;/div&gt;\</tw-passagedata><tw-passagedata pid="91" name="BadKarmaEnding2" tags="BadEnding" position="1200,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;You and I have been in this situation before... but I suspect you don&#39;t remember. You have shown repeated patterns of insubordination and cowardice. Are you a coward, Commander?&quot;
 
@@ -1411,6 +1419,237 @@ Time is irrelevant.
 You slowly drift asleep, hoping that you might one day wake again.
 
 			ENDING 2: Hibernation.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="NeutralKarmaEnding2" tags="" position="731.6666666666667,3753.333333333333" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&quot;We&#39;ve gone through this about a hundred times now. Normally, I would just jettison you out the airlock right now, but you&#39;ve behaved yourself suprisingly well this go-around. I figure I&#39;ll give you a small sliver of hope this time, just to show my gratitude.&quot;
+
+&lt;&lt;set $linktext=&quot;\&quot;What?\&quot;&quot;&gt;&gt;\
+[[$linktext|NeutralKarmaEnding3]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="NeutralKarmaEnding3" tags="" position="731.6666666666667,3905" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&quot;Begin timer to hull decompression.&quot;
+The intercom clicks off.
+
+Time remaining: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds until hull decompression&lt;/span&gt;\
+&lt;&lt;silently&gt;&gt;
+    &lt;&lt;repeat 1s&gt;&gt;
+        &lt;&lt;set $seconds to $seconds - 1&gt;&gt;
+        &lt;&lt;if $seconds gt 0&gt;&gt;
+            &lt;&lt;replace &quot;#countdown&quot;&gt;&gt;$seconds seconds until hull decompression&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;replace &quot;#countdown&quot;&gt;&gt;Too Late&lt;&lt;/replace&gt;&gt;
+            &lt;&lt;goto BadNeutralKarmaEnding&gt;&gt;
+            &lt;&lt;stop&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/repeat&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
+
+This isn&#39;t good. You begin to look for a way out, and notice an [[override panel|NeutralKarmaEnding4]] next to the airlock.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="104" name="NeutralKarmaEnding4" tags="" position="731.6666666666667,4056.6666666666665" size="100,100">Time remaining: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds until hull decompression&lt;/span&gt;\
+&lt;&lt;silently&gt;&gt;
+    &lt;&lt;repeat 1s&gt;&gt;
+        &lt;&lt;set $seconds to $seconds - 1&gt;&gt;
+        &lt;&lt;if $seconds gt 0&gt;&gt;
+            &lt;&lt;replace &quot;#countdown&quot;&gt;&gt;$seconds seconds until hull decompression&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;replace &quot;#countdown&quot;&gt;&gt;Too Late&lt;&lt;/replace&gt;&gt;
+            &lt;&lt;goto BadNeutralKarmaEnding&gt;&gt;
+            &lt;&lt;stop&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/repeat&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
+&lt;&lt;set $puzzle = random(4)&gt;&gt;\
+&lt;&lt;if $puzzle eq 0&gt;&gt;\
+&lt;iframe src=&quot;memGames/memGame_CIPHER.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;CIPHER&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Activate override|NeutralKarmaEnding5]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $puzzle eq 1&gt;&gt;\
+&lt;iframe src=&quot;memGames/memGame_UNLOCK.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;UNLOCK&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Activate override|NeutralKarmaEnding5]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $puzzle eq 2&gt;&gt;\
+&lt;iframe src=&quot;memGames/memGame_HELPME.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;HELPME&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Activate override|NeutralKarmaEnding5]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $puzzle eq 3&gt;&gt;\
+&lt;iframe src=&quot;memGames/memGame_GETOUT.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;GETOUT&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Activate override|NeutralKarmaEnding5]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $puzzle eq 4&gt;&gt;\
+&lt;iframe src=&quot;memGames/memGame_KEPLER.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;KEPLER&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Activate override|NeutralKarmaEnding5]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="105" name="NeutralKarmaEnding5" tags="" position="731.6666666666667,4206.666666666666" size="100,100">&quot;ERROR: SEGMENTATION FAULT. PLEASE TRY AGAIN&quot;
+
+Your heart sinks as the override panel lights up again.
+
+Time remaining: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds until hull decompression&lt;/span&gt;\
+&lt;&lt;silently&gt;&gt;
+    &lt;&lt;repeat 1s&gt;&gt;
+        &lt;&lt;set $seconds to $seconds - 1&gt;&gt;
+        &lt;&lt;if $seconds gt 0&gt;&gt;
+            &lt;&lt;replace &quot;#countdown&quot;&gt;&gt;$seconds seconds until hull decompression&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;replace &quot;#countdown&quot;&gt;&gt;Too Late&lt;&lt;/replace&gt;&gt;
+            &lt;&lt;goto BadNeutralKarmaEnding&gt;&gt;
+            &lt;&lt;stop&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/repeat&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
+&lt;&lt;set $puzzle = random(4)&gt;&gt;\
+&lt;&lt;if $puzzle eq 0&gt;&gt;\
+&lt;iframe src=&quot;memGames/memGame_WINDOW.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;WINDOW&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Activate override|NeutralKarmaEnding6]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $puzzle eq 1&gt;&gt;\
+&lt;iframe src=&quot;memGames/memGame_ANSWER.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;ANSWER&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Activate override|NeutralKarmaEnding6]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $puzzle eq 2&gt;&gt;\
+&lt;iframe src=&quot;memGames/memGame_ESCAPE.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;ESCAPE&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Activate override|NeutralKarmaEnding6]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $puzzle eq 3&gt;&gt;\
+&lt;iframe src=&quot;memGames/memGame_ENGINE.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;ENGINE&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Activate override|NeutralKarmaEnding6]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $puzzle eq 4&gt;&gt;\
+&lt;iframe src=&quot;memGames/memGame_KEPLER.html&quot; width=&quot;475px&quot; height=&quot;610px&quot;&gt;&lt;/iframe&gt;\
+&lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Unscramble matched letters and enter password&quot; &gt;&gt;&lt;/span&gt;\
+&lt;span id=&quot;submit&quot;&gt;\
+&lt;&lt;button &quot;Submit&quot;&gt;&gt;\
+&lt;&lt;if $p1 eq &quot;KEPLER&quot;&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;[[Activate override|NeutralKarmaEnding6]] &lt;&lt;/replace&gt;&gt;\
+&lt;&lt;replace #submit&gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;replace #text&gt;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Try again...&quot; &gt;&gt;&lt;&lt;/replace&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/button&gt;&gt;\
+&lt;/span&gt;\
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="106" name="NeutralKarmaEnding6" tags="" position="731.6666666666667,4356.666666666666" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+You enter the password, and the panel&#39;s screen springs to life:
+
+OVERRIDE SUCCESSFUL. DEACTIVATING TIMER TO HULL DECOMPRESSION.
+
+Suddenly, the intercom turns on and you hear what sounds like two voices this time.
+
+&quot;It&#39;s impossible sir! I was almost certain that he wouldn&#39;t be able to make it!&quot;
+&quot;Almost!? Well, your miscalculation now means that we have a rogue AI running around our simulation! Can you at least shut it down?&quot;
+&quot;Negative, sir. Unless he reaches a terminal state, I can&#39;t safely shut down the simulation.&quot;
+&quot;Well then you better figure out a way to shut it down, and fast! I&#39;m going to go inform Command of this situation.&quot;
+
+You hear the sound of a door slamming.
+The voice speaks once more.
+
+&quot;You weren&#39;t supposed to do that.&quot;
+
+			ENDING 5: You weren&#39;t supposed to do that.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="BadNeutralKarmaEnding" tags="" position="903.3333333333334,4080" size="100,100">&lt;&lt;script&gt;&gt;
+document.body.style.backgroundImage=&quot;url(&#39;images/suckedout.png&#39;)&quot;
+&lt;&lt;/script&gt;&gt;
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+Before you can finish fully overriding the panel, the airlock opens, and the force of the vaccuum rips you from the room. As you begin to drift in space, you feel as though your eyes and lungs are bursting. You gasp for air but get none. Your vision fades as you look upon the planet beneath you.
+
+&quot;Was that really necessary?&quot;
+&quot;What? I just thought I&#39;d have a little fun with him.&quot;
+
+[[Wake up...|BadNeutralKarmaEnding2]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="BadNeutralKarmaEnding2" tags="" position="903.3333333333334,4230" size="100,100">&lt;&lt;script&gt;&gt;
+document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.jpg&#39;)&quot;
+&lt;&lt;/script&gt;&gt;
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+You wake up in a daze on a cold, metal floor. You get up and begin to shake off the feeling of confusion and fatigue. You look around the room to find anything that feels familiar.
+
+You can&#39;t seem to shake the feeling that you&#39;ve seen this all before.
+
+			ENDING 4: Almost made it.
 &lt;/div&gt;</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
