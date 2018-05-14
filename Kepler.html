@@ -229,6 +229,7 @@ div#memory_board > div{
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.game = {};
 window.game.memory_values = [];
 window.game.memory_tile_ids = [];
@@ -320,6 +321,7 @@ Array.prototype.memory_tile_shuffle = function( ){
 
 
 
+
 </script><tw-tag name="Core" color="purple"></tw-tag>,<tw-tag name="BGProcess" color="red"></tw-tag>,<tw-tag name="AltEnding" color="blue"></tw-tag>,<tw-tag name="GoodEnding" color="green"></tw-tag>,<tw-tag name="NeutralEnding" color="yellow"></tw-tag>,<tw-tag name="BadEnding" color="red"></tw-tag><tw-passagedata pid="1" name="Start" tags="Core" position="300,25" size="200,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
@@ -361,8 +363,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/startbackground.jpg&#
 &lt;&lt;endif&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You notice a large [[window|Window]] on the other side of the room and behind you there is a large [[door|Door]]. \
 &lt;&lt;if visited(&quot;Desk&quot;) eq 0 and variables().inventory[0] eq 0&gt;&gt;To the front, you notice a [[desk|Desk]].
-&lt;&lt;/if&gt;&gt;&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="6" name="StoryCaption" tags="" position="50,225" size="100,100">/****************************
+&lt;&lt;/if&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="StoryCaption" tags="" position="50,225" size="100,100">/****************************
 * Karma meter
 ****************************/\
 \
@@ -454,6 +455,16 @@ document.body.style.backgroundImage= &quot;url(&#39;images/hallway.jpg&#39;)&quo
 		 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="MysteriousDoor" tags="" position="1000,1000" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/mysterydoor.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
+&lt;&lt;if visited(&quot;Sector8Entrance&quot;) gt 0&gt;&gt;\
+&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;maintheme&quot; loop play&gt;&gt;\
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+You are in front of the door to Sector 8.
+[[Enter Sector 8|Sector8Entrance]]
+[[Return to Corridor|Examine corridor]]
+&lt;/div&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if visited(&quot;Sector8Entrance&quot;) eq 0&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You approach a mysterious door. You look around to see nothing but more long, distant corridors. You hear the AI click on again:
 
@@ -470,9 +481,8 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;script&gt;&gt;
 document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;
-&lt;/div&gt;
-
-</tw-passagedata><tw-passagedata pid="15" name="Control Room Door" tags="AltEnding" position="1330,966" size="100,100">&lt;&lt;if variables().inventory[0] eq 0&gt;&gt;
+&lt;/div&gt;\
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="Control Room Door" tags="AltEnding" position="1330,966" size="100,100">&lt;&lt;if variables().inventory[0] eq 0&gt;&gt;
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/Doorlocked.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
@@ -514,8 +524,9 @@ document.body.style.backgroundImage= &quot;url(&#39;images/Doorunlocked.jpg&#39;
 [[Go back to corridor|Examine corridor]]&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if variables().inventory[0] eq 1&gt;&gt;\
+&lt;&lt;set $inventory[0]--&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
-&quot;The door has been unlocked, Commander. However you should know that I am not equiped to assist you beyond this point. As soon as you step through this door, you are on your own&quot;
+You unlock the door with your keycard.
 [[Go through door|AltHallway]]
 &lt;/div&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Demand Open Control" tags="" position="1550,1125" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;&quot;Commander, you of all people should know how security on this ship works. Without a keycard, you cannot open this door.&quot; 
 [[Return to corridor|Examine corridor]] &lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Ask Respectfully Control" tags="" position="1550,800" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;&quot;Security on this ship is handled through a key card system. Entrance through this door requires a keycard.&quot;
@@ -744,7 +755,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/Brig.jpg&#39;)&quot;
 [[$linktext|MyGMission]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="MyGGrim" tags="" position="425,1250" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;I understand that the current situation is not optimal but there is not really anything I can do about it. You do have the option to unload our research instruments and surface rovers and use the planets orbit to slingshot us back to Earth. However, it is my job to encourage you to complete the mission regardless of our current situation.&quot;
-&lt;&lt;set $linktext=&quot;\&quot;Thanks for recommendation. I think I&#39;ll go and investigate the ship.\&quot;&quot;&gt;&gt;\
+&lt;&lt;set $linktext=&quot;\&quot;I think I&#39;ll go and investigate the ship.\&quot;&quot;&gt;&gt;\
 [[$linktext|BeginInvestigation]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="MyGMission" tags="" position="575,1250" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;You and the crew were sent here in to investigate the planet and gather information regarding its inhabitability. The journey to this part of the solar system was supposed to take roughly 5 years but we were able to accelerate our course by utilizing an unsurveyed planet on the outer edge of the solar system to refuel. It has been 3 years, 42 days, and 10 hours since we departed Earth.&quot;
@@ -765,10 +776,17 @@ document.body.style.backgroundImage=&quot;url(&#39;images/sector8entrance.png&#3
 Ahead of you, you see a short hallway with a couple doors. To your right, you see a small control room.
 [[Go down the hallway|Sec8Hallway]]
 [[Enter the control room|Sec8Control]]
+[[Return to the mysterious door|MysteriousDoor]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="Sec8Hallway" tags="" position="500,1700" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/sec8hallway.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;&lt;if visited(&quot;Sec2Landing&quot;) gt 0&gt;&gt;\
+[[Enter the research room|Sec8Research]]
+[[Go to Sector 2|Sec2Landing]]
+[[Go to Sector 8 Entrance|Sector8Entrance]]
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if visited(&quot;Sec2Landing&quot;) eq 0&gt;&gt;\
 &lt;&lt;if visited(&quot;Sec8Research&quot;) eq 0&gt;&gt;\
 After walking down the hallway, you find yourself near what looks like a research room. In front of you, there is another doorway.\
 &lt;&lt;else&gt;&gt;\
@@ -776,6 +794,7 @@ To your right is the research room. In front of you, there is another doorway.\&
 &lt;&lt;if visited(&quot;Sec8Control&quot;) eq 1&gt;&gt; Going through that doorway should lead you toward the cockpit if that map in the control room was correct.&lt;&lt;/if&gt;&gt;
 [[Enter the research room|Sec8Research]]
 [[Walk down the hallway and open the doors|Sec8Hallway2]]
+&lt;&lt;/if&gt;&gt;\
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Sec8Control" tags="" position="650,1700" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/sec8control.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;\
@@ -819,7 +838,7 @@ On the table, you see a small document.
 document.body.style.backgroundImage=&quot;url(&#39;images/sec8doc.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
-[[Exit back to hallway|Sec8Hallway]]
+[[Put down document|researchtable]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="Sec2Neutral" tags="" position="400,2000" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;As I told you before, Commander, there is a chance that the crew was teleported to the surface of the planet. However slim it may be, it is still crucial that you complete the mission at hand. You must travel to the surface and gather data about whether it can support human life. The people back on Earth are counting on us and this planet has the highest probability of sustain life.&quot;
 
@@ -860,6 +879,7 @@ document.body.style.backgroundImage=&quot;url(&#39;images/sector2landing.jpg&#39
 You find yourself in a room with a several doors. One of them has a sign above it that says &quot;Only High-Ranking Crew Members Beyond This Point&quot;. The other door has a sign above it that says &quot;Conference Quarters&quot;.
 [[Enter Conference Quarters|ConferenceQuarters]]
 [[Enter High-Ranking section|HighRankSec]]
+[[Return to Sector 8 Hallway|Sec8Hallway]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="ConferenceQuarters" tags="" position="225,2425" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/conference.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;\
@@ -1320,7 +1340,7 @@ Alternate Ending: Escape
 &quot;Ha, and you cannot even stand up for yourself. It is clear that we no longer need your participation in my research.&quot;
 [[What research?|BadEnding6]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="BadEnding5" tags="BadEnding" position="1125,3975" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
-&quot;Lets just say that I have reached a final conlcusion in my research. Your participation is no longer required commander.&quot;
+&quot;Lets just say that I have reached a final conlcusion in my research. Your participation is no longer required Commander.&quot;
 [[Continue|BadEnding6]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="BadEnding6" tags="BadEnding" position="1275,3975" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You attempt to speak, but realize that you can&#39;t, almost as though you have no mouth to begin with. You hear the AI&#39;s voice say &quot;Yes, sir&quot; a couple times, which makes you think you are only hearing half a conversation. Finally the voice says:
