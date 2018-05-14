@@ -102,7 +102,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="Kepler" startnode="1" creator="Twine" creator-version="2.2.1" ifid="E8795B13-C3DF-4E1E-97B8-9DF0BBE7E012" zoom="0.6" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/***********************
+	<div id="store-area" hidden><tw-storydata name="Kepler" startnode="1" creator="Twine" creator-version="2.2.1" ifid="E8795B13-C3DF-4E1E-97B8-9DF0BBE7E012" zoom="1" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/***********************
 *  Karma meter styling 
 ***********************/
 
@@ -231,6 +231,7 @@ div#memory_board > div{
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.game = {};
 window.game.memory_values = [];
 window.game.memory_tile_ids = [];
@@ -302,6 +303,7 @@ Array.prototype.memory_tile_shuffle = function( ){
 			
 		document.getElementById('memory_board').innerHTML = output;//set values for each tile
 };
+
 
 
 
@@ -480,19 +482,7 @@ You approach a mysterious door. You look around to see nothing but more long, di
 
 &quot;Are you sure you want to go in there? It may no longer be safe in that sector of the ship.&quot;
 &lt;&lt;set $linktext = &quot;\&quot;I&#39;m still not sure what is going on here. Would you mind explaining what happened here?\&quot;&quot;&gt;&gt;
-&lt;&lt;link [[$linktext|MysteriousGood]]&gt;&gt;\
-&lt;&lt;set $karma += 10&gt;&gt;\
-&lt;&lt;script&gt;&gt;
-document.getElementById(&quot;karmameter&quot;).value = variables().karma;
-&lt;&lt;/script&gt;&gt;\&lt;&lt;/link&gt;&gt; \
-&lt;&lt;set $linktext = &quot;\&quot;I&#39;ll just go ahead and see for myself.\&quot;&quot;&gt;&gt;
-&lt;&lt;link [[$linktext|MysteriousBad]]&gt;&gt;
-&lt;&lt;set $karma -= 10&gt;&gt;
-&lt;&lt;script&gt;&gt;
-document.getElementById(&quot;karmameter&quot;).value = variables().karma;
-&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;
-&lt;/div&gt;\
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="Control Room Door" tags="AltEnding" position="1330,966" size="100,100">&lt;&lt;if variables().inventory[0] gt 0&gt;&gt;\
+&lt;&lt;link [[$linktext|MysteriousGood]]&gt;&gt;\</tw-passagedata><tw-passagedata pid="15" name="Control Room Door" tags="AltEnding" position="1330,966" size="100,100">&lt;&lt;if variables().inventory[0] gt 0&gt;&gt;\
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/Doorunlocked.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
@@ -771,39 +761,33 @@ document.body.style.backgroundImage= &quot;url(&#39;images/Brig.jpg&#39;)&quot;
 &lt;&lt;set $linktext=&quot;\&quot;I don&#39;t remember any of this. Exactly why did I wake up in an unrelated part of the ship?\&quot;&quot;&gt;&gt;
 [[$linktext|MyGReply]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="36" name="MysteriousBad" tags="" position="1125,1100" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
-&quot;I highly recommend against entering, Commander. The ship has not fully repaired the damage from the catastrophic decompression. It is imperative that we wait for the ship to repair before entering this sector.&quot;
-&lt;&lt;set $linktext=&quot;\&quot;Is there some kind of status report that we can get?\&quot;&quot;&gt;&gt;
-[[$linktext|SystemCheck]]\
-&lt;&lt;set $linktext=&quot;\&quot;I&#39;m not sure I can even trust what you are saying.\&quot;&quot;&gt;&gt;
-[[$linktext|Distrust]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="SystemCheck" tags="" position="1050,1250" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="38" name="Distrust" tags="" position="1200,1250" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="39" name="MyGReply" tags="" position="750,1100" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+</tw-passagedata><tw-passagedata pid="36" name="MyGReply" tags="" position="750,1100" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;The ship has an automated system that immediately teleports all crew members vital to the mission away from any life-threatening events on the ship. Fortunately, the system was able to materialize you in a unaffected part of the ship before the rest of the crew.&quot;
 &lt;&lt;set $linktext=&quot;\&quot;What about the rest of the crew? You said we only suffered moderate casualties.\&quot;&quot;&gt;&gt;
 [[$linktext|MyGReply2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="MyGReply2" tags="" position="625,1100" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="MyGReply2" tags="" position="625,1100" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;I cannot confirm the exact cause of the crews disappearance but it seems as though the solar anomaly caused a malfunction with the teleportation system which could have teleported them anywhere within 100 miles of the ship. My scans show that there are no signs of life within the ship besides you, Commander.&quot;
 &lt;&lt;set $linktext=&quot;\&quot;But, there isn&#39;t anything but space and one lone planet within that range. Could they have been transported to the surface due to the malfunction?\&quot;&quot;&gt;&gt;
 [[$linktext|MyGInquiry]]\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="MyGInquiry" tags="" position="500,1100" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="MyGInquiry" tags="" position="500,1100" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;My calculations show that there is less than a 1 percent chance that the crew arrived on the surface of the planet after the malfunction.&quot;
 &lt;&lt;set $linktext=&quot;\&quot;That puts a fairly grim perspective on my situation.\&quot;&quot;&gt;&gt;
 [[$linktext|MyGGrim]]
 &lt;&lt;set $linktext=&quot;\&quot;You mentioned something about a mission, what mission are you talking about exactly?\&quot;&quot;&gt;&gt;\
 [[$linktext|MyGMission]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="MyGGrim" tags="" position="425,1250" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="MyGGrim" tags="" position="425,1250" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;I understand that the current situation is not optimal but there is not really anything I can do about it. You do have the option to unload our research instruments and surface rovers and use the planets orbit to slingshot us back to Earth. However, it is my job to encourage you to complete the mission regardless of our current situation.&quot;
 &lt;&lt;set $linktext=&quot;\&quot;I think I&#39;ll go and investigate the ship.\&quot;&quot;&gt;&gt;\
 [[$linktext|BeginInvestigation]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="MyGMission" tags="" position="575,1250" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="MyGMission" tags="" position="575,1250" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;You and the crew were sent here in to investigate the planet and gather information regarding its inhabitability. The journey to this part of the solar system was supposed to take roughly 5 years but we were able to accelerate our course by utilizing an unsurveyed planet on the outer edge of the solar system to refuel. It has been 3 years, 42 days, and 10 hours since we departed Earth.&quot;
 &lt;&lt;set $linktext=&quot;\&quot;Thanks for filling me in. I&#39;m going to take a look around the ship.\&quot;&quot;&gt;&gt;\
 [[$linktext|BeginInvestigation]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="BeginInvestigation" tags="" position="575,1400" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="BeginInvestigation" tags="" position="575,1400" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Okay, commander, the sector is repaired so you can enter now. I would recommend making your way toward the control deck.&quot;
 
 [[Enter into sector 8|Sector8Entrance]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="Sector8Entrance" tags="" position="575,1550" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="Sector8Entrance" tags="" position="575,1550" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;midgametheme&quot; loop play&gt;&gt;
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/sector8entrance.png&#39;)&quot;
@@ -815,7 +799,7 @@ Ahead of you, you see a short hallway with a couple doors. To your right, you se
 [[Go down the hallway|Sec8Hallway]]
 [[Enter the control room|Sec8Control]]
 [[Return to the mysterious door|MysteriousDoor]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="Sec8Hallway" tags="" position="500,1700" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="Sec8Hallway" tags="" position="500,1700" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/sec8hallway.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -833,20 +817,20 @@ To your right is the research room. In front of you, there is another doorway.\&
 [[Enter the research room|Sec8Research]]
 [[Walk down the hallway and open the doors|Sec8Hallway2]]
 &lt;&lt;/if&gt;&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Sec8Control" tags="" position="650,1700" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="Sec8Control" tags="" position="650,1700" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/sec8control.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 Inside the control room, there are several large screens. The one to your left shows a large map. You take a look and it looks like the cockpit is not that far away. It seems like the best route to take is down the hallway nearby.
 [[Go back to Sector 8 corridor|Sector8Entrance]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="Sec8Research" tags="" position="350,1700" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="Sec8Research" tags="" position="350,1700" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/sec8research.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 After entering the room, it becomes clear that this is some kind of medical research room. It doesn&#39;t look like anything in here has been touched in ages. In the middle of the room, there is a large surgical table.
 [[Investigate table|researchtable]]
 [[Go back into hallway|Sec8Hallway]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="Sec8Hallway2" tags="" position="500,1850" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="Sec8Hallway2" tags="" position="500,1850" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/sec2doorway.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -865,24 +849,24 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;set $karma -= 20&gt;&gt;\
 &lt;&lt;script&gt;&gt;
 document.getElementById(&quot;karmameter&quot;).value = variables().karma;
-&lt;&lt;/script&gt;&gt;\&lt;&lt;/link&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="researchtable" tags="" position="250,1825" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;&lt;/script&gt;&gt;\&lt;&lt;/link&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="researchtable" tags="" position="250,1825" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/sec8researchtable.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 On the table, you see a small document.
 [[Pick up and read the document|ReadDoc]]
 [[Exit back into hallway|Sec8Hallway]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="ReadDoc" tags="" position="175,1950" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="ReadDoc" tags="" position="175,1950" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/sec8doc.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 [[Put down document|researchtable]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="Sec2Neutral" tags="" position="400,2000" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="Sec2Neutral" tags="" position="400,2000" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;As I told you before, Commander, there is a chance that the crew was teleported to the surface of the planet. However slim it may be, it is still crucial that you complete the mission at hand. You must travel to the surface and gather data about whether it can support human life. The people back on Earth are counting on us and this planet has the highest probability of sustain life.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;I&#39;m not entirely sure I can go down to the surface alone. What if the crew isn&#39;t down there?\&quot;&quot;&gt;&gt;\
 [[$linktext|Sec2PostNeutral]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="Sec2Bad" tags="" position="600,2000" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="Sec2Bad" tags="" position="600,2000" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;I can assure you, Commander, there is no reason for you not to trust me. My programming does not allow me to deceive anyone onboard the ship.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;How am I supposed to confirm that? That could easily be a false statement as well.\&quot;&quot;&gt;&gt;\
@@ -893,12 +877,12 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;/script&gt;&gt;\&lt;&lt;/link&gt;&gt;
 &lt;&lt;set $linktext=&quot;\&quot;Okay, I believe you. \&quot;&quot;&gt;&gt;\
 [[$linktext|Sec2Neutral]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="Sec2BadDistrust" tags="" position="600,2150" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="Sec2BadDistrust" tags="" position="600,2150" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;I understand that it may be hard to trust me, Commander, since you have no recollection of most of the journey. But, you must believe me. The entire human race is counting on this mission to be successful and you are the only one that can complete it.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;I&#39;m going to keep investigating. Try to leave me alone for a bit.\&quot;&quot;&gt;&gt;\ 
 [[$linktext|Sec2BeforeEntrance]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="AltHallway" tags="AltEnding" position="1528,1325" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="AltHallway" tags="AltEnding" position="1528,1325" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;ominousmusic&quot; loop play&gt;&gt;\
 
@@ -906,15 +890,15 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 document.body.style.backgroundImage= &quot;url(&#39;images/corridor2.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;As you walk through the door, the first thing you notice is the silence, not only because of the absence of the AI&#39;s voice but even the faint ambient hum of the ship that you hadn&#39;t really noticed until now has stopped
-[[Continue down the corridor|AltHallway2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="Sec2PostNeutral" tags="" position="400,2150" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+[[Continue down the corridor|AltHallway2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="Sec2PostNeutral" tags="" position="400,2150" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Even if the crew isn&#39;t on the surface, Commander, our mission is still priority number one regardless of what happens to yourself or the crew. Otherwise, the human race will not live on much longer.&quot;
 &lt;&lt;set $linktext=&quot;\&quot;I understand the importance of the mission. But, there must be a chance that this mission can be rerun if I return with nothing. I&#39;m going to keep moving.\&quot;&quot;&gt;&gt;\
 [[$linktext|Sec2BeforeEntrance]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="Sec2BeforeEntrance" tags="" position="500,2300" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="Sec2BeforeEntrance" tags="" position="500,2300" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Very well, Commander. Please proceed into Sector 2 and continue moving toward the cockpit.&quot;
 
 [[Move through door to Sector 2|Sec2Landing]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="Sec2Landing" tags="" position="500,2425" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="Sec2Landing" tags="" position="500,2425" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/sector2landing.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -922,7 +906,7 @@ You find yourself in a room with a several doors. One of them has a sign above i
 [[Enter Conference Quarters|ConferenceQuarters]]
 [[Enter High-Ranking section|HighRankSec]]
 [[Return to Sector 8 Hallway|Sec8Hallway]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="ConferenceQuarters" tags="" position="225,2425" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="ConferenceQuarters" tags="" position="225,2425" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/conference.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -930,7 +914,7 @@ Inside of the conference room, there is a large conference table.
 &lt;&lt;if variables().inventory[0] eq 0&gt;&gt;\To your right there is a large bookcase with a glass cover. There is a keypad that looks like it will unlock the bookcase.
 [[Use keypad to unlock bookcase|BookcasePuzzle]]&lt;&lt;/if&gt;&gt;
 [[Exit back into Sector 2 Landing|Sec2Landing]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="HighRankSec" tags="" position="500,2550" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="HighRankSec" tags="" position="500,2550" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/highrankhall.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -939,7 +923,7 @@ You find yourself in a long hallway with only one door at the end of the hallway
 &quot;Commander, at the end of this hallway is the cockpit. Before you enter there, you need to have made your decision regarding the mission. Now that you are in the high-ranking section, misuse of any security systems cannot be overridden by me. Please make sure that you have any necessary security keycards before continuing.&quot;
 [[Continue down hallway|HighRankSec2]]
 [[Go back to Sector 2 Landing|Sec2Landing]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="BookcasePuzzle" tags="" position="225,2575" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="BookcasePuzzle" tags="" position="225,2575" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;\
 
@@ -1016,13 +1000,13 @@ document.body.style.backgroundImage=&quot;url(&#39;images/conference.jpg&#39;)&q
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/button&gt;&gt;\
 &lt;/span&gt;\
-&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="62" name="OpenedBookcase" tags="" position="225,2725" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="59" name="OpenedBookcase" tags="" position="225,2725" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;midgametheme&quot; loop play&gt;&gt;
 
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 The glass covering the bookcase slides open. Most of the books are just classic novels and old travel logs. However, there is one that looks like it has been placed in the bookcase upside down. The title of it is simply &quot;Kepler&quot;.
 [[Grab the book and open it|ConferenceBook]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="ConferenceBook" tags="" position="225,2875" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="ConferenceBook" tags="" position="225,2875" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/conferencebookopen.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -1030,7 +1014,7 @@ You open the misplace book and inside it you find a keycard.
 &lt;&lt;link [[Take keycard and return to Section 2 Landing|Sec2Landing]]&gt;&gt;
 &lt;&lt;set $inventory[0]++&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="HighRankSec2" tags="" position="500,2700" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="HighRankSec2" tags="" position="500,2700" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &lt;&lt;if variables().inventory[0] eq 0&gt;&gt;
 &quot;Because of the emergency shutdown of the systems after the catastrophic solar event, the cockpit now has an additional layer of security, Commander. In order to enter, you will need both a keycard and a keypad password.&quot;
 
@@ -1041,7 +1025,7 @@ You open the misplace book and inside it you find a keycard.
 [[Enter password into keypad|CockpitPuzzle]]
 [[Go back to Section 2 Landing|Sec2Landing]]
 &lt;&lt;/if&gt;&gt;&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="65" name="CockpitPuzzle" tags="" position="500,2850" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;\
+</tw-passagedata><tw-passagedata pid="62" name="CockpitPuzzle" tags="" position="500,2850" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;\
 
@@ -1101,7 +1085,7 @@ You open the misplace book and inside it you find a keycard.
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/button&gt;&gt;\
 &lt;/span&gt;\
-&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="66" name="Cockpit" tags="" position="500,3000" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="63" name="Cockpit" tags="" position="500,3000" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;cockpittheme&quot; loop play&gt;&gt;\
 
 &lt;&lt;set $inventory[0]--&gt;&gt;
@@ -1126,7 +1110,7 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;script&gt;&gt;
 document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;/script&gt;&gt;\&lt;&lt;/link&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="CockpitGood" tags="" position="400,3150" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="CockpitGood" tags="" position="400,3150" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;As I stated earlier, Commander, the chance that they are on the surface is slim. But, it is my job to remind you that it is imperative that you complete the mission. I suggest that you go down to the surface of the planet. If not to find the crew, then to begin research so that we can save the people back on Earth who are counting on this mission and the planet being inhabitable.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;I agree, I think that I should go to the surface and investigate. If this planet can sustain human life, the people back on Earth have a fighting chance.\&quot;&quot;&gt;&gt;\
@@ -1141,7 +1125,7 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;script&gt;&gt;
 document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;/script&gt;&gt;\&lt;&lt;/link&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="CockpitBad" tags="" position="600,3150" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="CockpitBad" tags="" position="600,3150" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;I understand that, Commander. Please understand that there is not any reason for you to distrust me. I am only here to assist you in completing the mission and helping you understand what steps need to be taken to do so.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;Okay, I am going to trust you.\&quot;&quot;&gt;&gt;\
@@ -1157,10 +1141,10 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;/script&gt;&gt;\&lt;&lt;/link&gt;&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="69" name="CockpitGood2" tags="" position="400,3300" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+</tw-passagedata><tw-passagedata pid="66" name="CockpitGood2" tags="" position="400,3300" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Very well, Commander. On the console, you should find a button that says &#39;Emergency Cargo Release&#39;. If you press that, it will open the cargo bay and release all of the onboard research equipment. At that point, I will set our course back to Earth and the mission will be a failure. However, if you want to travel to the surface of the planet, begin your research and possibly find your crew, select the button that says &#39;Ready Ship-to-Surface Pods&#39; and I will begin setting up all of the research equipment for deployment.&quot;
 [[Make decision|CockpitFinalDecision]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="CockpitBad2" tags="" position="600,3300" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="CockpitBad2" tags="" position="600,3300" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &lt;&lt;if $karma gt 25&gt;&gt;
 &quot;Just because the crew may not be down there does not mean you cannot complete the mission. I will be there to assist you. The people back on Earth are counting on you.&quot;
 &lt;&lt;else&gt;&gt;\
@@ -1168,7 +1152,7 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;/if&gt;&gt;
 [[Make decision|CockpitFinalDecision]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="71" name="CockpitFinalDecision" tags="" position="500,3450" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+</tw-passagedata><tw-passagedata pid="68" name="CockpitFinalDecision" tags="" position="500,3450" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;So, Commander, what is your decision?&quot;
 &lt;/div&gt;
 &lt;&lt;button &quot;Ready Ship-to-Surface Pods&quot;&gt;&gt;
@@ -1194,34 +1178,34 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 
 &lt;&lt;/button&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="72" name="GoodKarmaGoodEnding" tags="GoodEnding" position="125,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+</tw-passagedata><tw-passagedata pid="69" name="GoodKarmaGoodEnding" tags="GoodEnding" position="125,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Very well, Commander. I will begin prepping the research equipment for deployment. Please go to the other side of the room and enter the ship-to-surface pod and run through the system check.&quot;
 [[Go to pod|GoodKarmaEnding2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="BadKarmaEnding" tags="BadEnding" position="1200,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="BadKarmaEnding" tags="BadEnding" position="1200,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;To be honest Commander, I did not expect anything different from you on this mission.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;What do you mean?\&quot;&quot;&gt;&gt;\
 [[$linktext|BadKarmaEnding2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="NeutralKarmaEnding" tags="NeutralEnding" position="730,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="NeutralKarmaEnding" tags="NeutralEnding" position="730,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Did you really think that that would work?&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;What are you talking about?\&quot;&quot;&gt;&gt;\
 [[$linktext|NeutralKarmaEnding2]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="75" name="GoodKarmaEnding2" tags="GoodEnding" position="125,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+</tw-passagedata><tw-passagedata pid="72" name="GoodKarmaEnding2" tags="GoodEnding" position="125,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You go into the ship-to-surface pod and being the on-screen system check. You are still unsure whether or not the crew is on the surface of the planet or not. Regardless of whether or not they are there, you are determined to complete the research and send your findings back to Earth in the hopes that the human race will have a chance to return here and continue its legacy. You hear the AI intercom click on again:
 
 &quot;All systems are ready and the research equipment is ready for deployment. Are you ready to go to the surface, Commander?&quot;
 
 [[Begin launch to surface|GoodKarmaEnding3]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="GoodKarmaEnding3" tags="GoodEnding" position="250,3725" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="GoodKarmaEnding3" tags="GoodEnding" position="250,3725" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/onsurface.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You land on the surface of planet. It does not look much like Earth but it feels like it could become home. You hear the research equipment land behind you in the distance. Then everything fades to white...
 
 [[Continue|GoodKarmaEnding4]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="GoodKarmaEnding4" tags="GoodEnding" position="250,3850" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="GoodKarmaEnding4" tags="GoodEnding" position="250,3850" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/whitescreen.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -1232,7 +1216,7 @@ A strange feeling falls over you, and you feel as though you&#39;ve been pulled 
 &lt;&lt;set $linktext=&quot;\&quot;Uh...Hello? Can anyone hear me?\&quot;&quot;&gt;&gt;\
 [[$linktext|GoodKarmaEnding5]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="78" name="GoodKarmaEnding5" tags="GoodEnding" position="125,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+</tw-passagedata><tw-passagedata pid="75" name="GoodKarmaEnding5" tags="GoodEnding" position="125,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You attempt to speak, but realize that you can&#39;t, almost as though you have no mouth to begin with. You hear the voice say &quot;Yes, sir&quot; a couple times, which makes you think you are only hearing half a conversation. Finally the voice says:
 
 &quot;Understood, sir. Reinstancing now...&quot;
@@ -1241,7 +1225,7 @@ As the voice finishes speaking, you feel your memory begin to fade as you come t
 
 &lt;&lt;set $linktext=&quot;Wake up&quot;&gt;&gt;\
 [[$linktext|GoodKarmaEnding6]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="GoodKarmaEnding6" tags="GoodEnding" position="125,3975" size="100,100">&lt;&lt;audio &quot;cockpittheme&quot; stop&gt;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="GoodKarmaEnding6" tags="GoodEnding" position="125,3975" size="100,100">&lt;&lt;audio &quot;cockpittheme&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;maintheme&quot; play&gt;&gt;\
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.jpg&#39;)&quot;
@@ -1252,22 +1236,22 @@ You wake up in a daze on a cold, metal floor. You get up and begin to shake off 
 You can&#39;t seem to shake the feeling that you&#39;ve seen this all before.
 
 			ENDING 1: Deja Vu.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="TerminalQ2" tags="" position="1998,501" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="TerminalQ2" tags="" position="1998,501" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/TerminalQ2.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You examine the terminal
 [[Return to Hallway|Quarters]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="TerminalQ6" tags="" position="2006,0" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="TerminalQ6" tags="" position="2006,0" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/TerminalQ6.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You examine the terminal
 [[Return to Hallway|Quarters]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="TerminalQ3" tags="" position="1998,363" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="TerminalQ3" tags="" position="1998,363" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/TerminalQ3.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You examine the terminal
 [[Return to Hallway|Quarters]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="83" name="AltHallway2" tags="AltEnding" position="1691,1328" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="AltHallway2" tags="AltEnding" position="1691,1328" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/corridor2Door.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;As you approach the door at the end of the corridor, a loud crackling coming from the intercom breaks the deafening silence followed by the same distorted voice you heard in the quarters. 
@@ -1280,13 +1264,13 @@ Containment protocal initiated..&quot;
 The door seals shut and you see a disturbance in the air in front of you that slowly materializes into a seemingly floating terminal screen...
 
 
-[[Examine Terminal|Exploit]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="84" name="Exploit" tags="AltEnding" position="1854,1331" size="100,100">&lt;&lt;script&gt;&gt;
+[[Examine Terminal|Exploit]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="Exploit" tags="AltEnding" position="1854,1331" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/Exploit.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;Confused by the apparent lack of physical laws, you can hardly focus on the letters typing across the screen. Remembering your training in computation you recognize that the program is waiting for inputs of some sort when another image materializes in front of you...
 
 
-[[Continue|ExploitInputs]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="ExploitInputs" tags="AltEnding" position="2000,1331" size="100,100">&lt;&lt;set $puzzle = random(3)&gt;&gt;\
+[[Continue|ExploitInputs]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="ExploitInputs" tags="AltEnding" position="2000,1331" size="100,100">&lt;&lt;set $puzzle = random(3)&gt;&gt;\
 &lt;&lt;if $puzzle eq 0&gt;&gt;\
 &lt;iframe src=&quot;sudoku/puzzle1/sudoku.html&quot; width=&quot;600px&quot; height=&quot;500px&quot;&gt;\&lt;/iframe&gt;\
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
@@ -1342,27 +1326,27 @@ document.body.style.backgroundImage= &quot;url(&#39;images/Exploit.jpg&#39;)&quo
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/button&gt;&gt;\
 &lt;/span&gt;\
-&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="86" name="Control" tags="AltEnding" position="2165,1329" size="100,100">&lt;&lt;audio &quot;ominousmusic&quot; stop&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="83" name="Control" tags="AltEnding" position="2165,1329" size="100,100">&lt;&lt;audio &quot;ominousmusic&quot; stop&gt;&gt;\
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/debug.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;The door opens and as you walk through it, the room seems to dematerialize around you, leaving you in complete darkness. White letters begin to appear in front of your eyes. You feel a strange familiarity and realize you can type words simply by thinking what it is you want to say. The text in front of you seems to show some system messeges.
 
 
-[[Continue|root]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="root" tags="AltEnding" position="2330,1331" size="100,100">&lt;&lt;script&gt;&gt;
+[[Continue|root]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="84" name="root" tags="AltEnding" position="2330,1331" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/root.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You see a terminal open in front of you and you can feel the power of root access. There are two files available. An executable file and a Readme.
 
 
 
-[[Open Readme file|readme1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="88" name="readme1" tags="AltEnding" position="2483,1329" size="100,100">&lt;&lt;script&gt;&gt;
+[[Open Readme file|readme1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="readme1" tags="AltEnding" position="2483,1329" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/readme1.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;
 
 
-[[Next|readme2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="readme2" tags="AltEnding" position="2648,1332" size="100,100">&lt;&lt;script&gt;&gt;
+[[Next|readme2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="readme2" tags="AltEnding" position="2648,1332" size="100,100">&lt;&lt;script&gt;&gt;
 
 document.body.style.backgroundImage= &quot;url(&#39;images/readme2.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
@@ -1370,35 +1354,35 @@ document.body.style.backgroundImage= &quot;url(&#39;images/readme2.jpg&#39;)&quo
 
 
 
-[[Next|readme3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="readme3" tags="AltEnding" position="2826,1334" size="100,100">&lt;&lt;audio &quot;alternateending&quot; play&gt;&gt;\
+[[Next|readme3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="readme3" tags="AltEnding" position="2826,1334" size="100,100">&lt;&lt;audio &quot;alternateending&quot; play&gt;&gt;\
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/readme3.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 			ENDING 6: The Truth
-&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="91" name="BadKarmaEnding2" tags="BadEnding" position="1200,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="88" name="BadKarmaEnding2" tags="BadEnding" position="1200,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;You and I have been in this situation before... but I suspect you don&#39;t remember. You have shown repeated patterns of insubordination and cowardice. Are you a coward, Commander?&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;No.\&quot;&quot;&gt;&gt;\
 [[$linktext|BadKarmaEnding3]]
 &lt;&lt;set $linktext=&quot;\&quot;I don&#39;t know.\&quot;&quot;&gt;&gt;\
 [[$linktext|BadKarmaEnding4]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="BadKarmaEnding3" tags="BadEnding" position="1125,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="BadKarmaEnding3" tags="BadEnding" position="1125,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Then I suspect you are not afraid of death Commander. Or are you?&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;Am I going to die?\&quot;&quot;&gt;&gt;\
 [[$linktext|BadEnding5]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="BadKarmaEnding4" tags="BadEnding" position="1275,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="BadKarmaEnding4" tags="BadEnding" position="1275,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Ha, and you cannot even stand up for yourself. It is clear that we no longer need your participation.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;Participation?\&quot;&quot;&gt;&gt;\
 [[$linktext|BadEnding6]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="BadEnding5" tags="BadEnding" position="1125,3975" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="BadEnding5" tags="BadEnding" position="1125,3975" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Let&#39;s just say that I have come to the conclusion that your participation is no longer required Commander.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;Participation?\&quot;&quot;&gt;&gt;\
 [[$linktext|BadEnding6]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="BadEnding6" tags="BadEnding" position="1275,3975" size="100,100">&lt;&lt;audio &quot;cockpittheme&quot; stop&gt;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="BadEnding6" tags="BadEnding" position="1275,3975" size="100,100">&lt;&lt;audio &quot;cockpittheme&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;airlocksound&quot; play&gt;&gt;\
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/suckedout.png&#39;)&quot;
@@ -1409,7 +1393,7 @@ document.body.style.backgroundImage=&quot;url(&#39;images/suckedout.png&#39;)&qu
 You begin to panic. You know what is about to happen. You spot a disposed EVA suit on a rack, and desperately attempt to put it on. Before you can finish fully securing the suit, the airlock opens, and the force of the vaccuum rips you from the room. As you begin to drift in space, you feel as though your eyes and lungs are bursting. You gasp for air but get none. Your vision fades as you look upon the planet beneath you.
 
 [[Wake up...|BadEnding7]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="BadEnding7" tags="BadEnding" position="1200,4100" size="100,100">&lt;&lt;audio &quot;maintheme&quot; play&gt;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="BadEnding7" tags="BadEnding" position="1200,4100" size="100,100">&lt;&lt;audio &quot;maintheme&quot; play&gt;&gt;\
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
@@ -1419,24 +1403,24 @@ You wake up in a daze on a cold, metal floor. You get up and begin to shake off 
 You can&#39;t seem to shake the feeling that you&#39;ve seen this all before.
 
 			ENDING 3: Expulsion.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="BadKarmaGoodEnding" tags="BadKarmaGoodEnding" position="463,3609" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="BadKarmaGoodEnding" tags="BadKarmaGoodEnding" position="463,3609" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Interesting. Your choice is unexpected. Almost too unexpected. I&#39;m unsure how to proceed.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;I don&#39;t understand. I just did what you told me to do.\&quot;&quot;&gt;&gt;\
 [[$linktext|BadKarmaGoodEnding2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="BadKarmaGoodEnding2" tags="" position="463,3759" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="BadKarmaGoodEnding2" tags="" position="463,3759" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Indeed you did. But your behavior so far seems to indicate that you shouldn&#39;t have.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;Why does that matter?\&quot;&quot;&gt;&gt;\
 [[$linktext|BadKarmaGoodEnding3]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="BadKarmaGoodEnding3" tags="" position="463,3909" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="BadKarmaGoodEnding3" tags="" position="463,3909" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 The voice doesn&#39;t respond for a while. After what seems like minutes, you hear the voice begin to speak again.
 
 &quot;Indeed you did. But your behavior so far seems to indicate that you shouldn&#39;t have.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;Why does that matter?\&quot;&quot;&gt;&gt;\
 [[$linktext|BadKarmaGoodEnding4]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="BadKarmaGoodEnding4" tags="" position="463,4059" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="BadKarmaGoodEnding4" tags="" position="463,4059" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 The voice doesn&#39;t acknowledge you, and begins having a conversation with what you can only assume is another person.
 
 &quot;Yes... 
@@ -1449,7 +1433,7 @@ Will do, sir...&quot;
 As the voice finishes speaking you feel yourself start to leave your own body, and become nothing more than a floating conscience. Everything goes black.
 
 [[Continue|BadKarmaGoodEnding5]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="BadKarmaGoodEnding5" tags="" position="463,4209" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="BadKarmaGoodEnding5" tags="" position="463,4209" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/blackscreen.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -1462,12 +1446,12 @@ Time is irrelevant.
 You slowly drift asleep, hoping that you might one day wake again.
 
 			ENDING 2: Hibernation.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="NeutralKarmaEnding2" tags="" position="731,3753" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="NeutralKarmaEnding2" tags="" position="731,3753" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;We&#39;ve gone through this about a hundred times now. Normally, I would just jettison you out the airlock right now, but you&#39;ve behaved yourself suprisingly well this go-around. I figure I&#39;ll give you a small sliver of hope this time, just to show my gratitude.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;What?\&quot;&quot;&gt;&gt;\
 [[$linktext|NeutralKarmaEnding3]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="NeutralKarmaEnding3" tags="" position="731,3905" size="100,100">&lt;&lt;audio &quot;cockpittheme&quot; stop&gt;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="NeutralKarmaEnding3" tags="" position="731,3905" size="100,100">&lt;&lt;audio &quot;cockpittheme&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;timermusic&quot; loop play&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Begin timer to hull decompression.&quot;
@@ -1488,7 +1472,7 @@ Time remaining: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds until hull
 &lt;&lt;/silently&gt;&gt;
 
 This isn&#39;t good. You begin to look for a way out, and notice an [[override panel|NeutralKarmaEnding4]] next to the airlock.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="104" name="NeutralKarmaEnding4" tags="" position="731,4056" size="100,100">Time remaining: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds until hull decompression&lt;/span&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="NeutralKarmaEnding4" tags="" position="731,4056" size="100,100">Time remaining: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds until hull decompression&lt;/span&gt;\
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;repeat 1s&gt;&gt;
         &lt;&lt;set $seconds to $seconds - 1&gt;&gt;
@@ -1571,7 +1555,7 @@ This isn&#39;t good. You begin to look for a way out, and notice an [[override p
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/button&gt;&gt;\
 &lt;/span&gt;\
-&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="105" name="NeutralKarmaEnding5" tags="" position="731,4206" size="100,100">&quot;ERROR: SEGMENTATION FAULT. PLEASE TRY AGAIN&quot;
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="102" name="NeutralKarmaEnding5" tags="" position="731,4206" size="100,100">&quot;ERROR: SEGMENTATION FAULT. PLEASE TRY AGAIN&quot;
 
 Your heart sinks as the override panel lights up again.
 
@@ -1658,7 +1642,7 @@ Time remaining: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds until hull
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/button&gt;&gt;\
 &lt;/span&gt;\
-&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="106" name="NeutralKarmaEnding6" tags="" position="731,4356" size="100,100">&lt;&lt;audio &quot;timermusic&quot; stop&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="103" name="NeutralKarmaEnding6" tags="" position="731,4356" size="100,100">&lt;&lt;audio &quot;timermusic&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;neutralending&quot; play&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You enter the password, and the panel&#39;s screen springs to life:
@@ -1678,7 +1662,7 @@ The voice speaks once more.
 &quot;You weren&#39;t supposed to do that.&quot;
 
 			ENDING 5: You weren&#39;t supposed to do that.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="BadNeutralKarmaEnding" tags="" position="903,4080" size="100,100">&lt;&lt;audio &quot;timermusic&quot; stop&gt;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="104" name="BadNeutralKarmaEnding" tags="" position="903,4080" size="100,100">&lt;&lt;audio &quot;timermusic&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;airlocksound&quot; play&gt;&gt;\
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/suckedout.png&#39;)&quot;
@@ -1690,7 +1674,7 @@ Before you can finish fully overriding the panel, the airlock opens, and the for
 &quot;What? I just thought I&#39;d have a little fun with him.&quot;
 
 [[Wake up...|BadNeutralKarmaEnding2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="BadNeutralKarmaEnding2" tags="" position="903,4230" size="100,100">&lt;&lt;audio &quot;maintheme&quot; play&gt;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="105" name="BadNeutralKarmaEnding2" tags="" position="903,4230" size="100,100">&lt;&lt;audio &quot;maintheme&quot; play&gt;&gt;\
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
