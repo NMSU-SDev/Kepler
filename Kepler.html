@@ -337,6 +337,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.j
 &lt;&lt;cacheaudio &quot;neutralending&quot; &quot;sounds/neutralending.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;alternateending&quot; &quot;sounds/alternateending.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;ominousmusic&quot; &quot;sounds/ominousmusic.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;airlocksound&quot; &quot;sounds/airlocksound.mp3&quot;&gt;&gt;
 
 &lt;&lt;set $karma = 0&gt;&gt;
 
@@ -349,7 +350,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.j
 --&gt;
 &lt;&lt;set $inventory=[0,0,0]&gt;&gt;
 
-&lt;&lt;set $seconds to 90&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Window" tags="" position="100,375" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;&lt;set $seconds to 10&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Window" tags="" position="100,375" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startwindow.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;You look out through the thick glass pane to see nothing but a large, blue planet with a star peeking just over the horizon.
@@ -1397,6 +1398,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/readme3.jpg&#39;)&quo
 &lt;&lt;set $linktext=&quot;\&quot;Participation?\&quot;&quot;&gt;&gt;\
 [[$linktext|BadEnding6]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="BadEnding6" tags="BadEnding" position="1275,3975" size="100,100">&lt;&lt;audio &quot;cockpittheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;airlocksound&quot; play&gt;&gt;\
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/suckedout.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
@@ -1676,6 +1678,7 @@ The voice speaks once more.
 
 			ENDING 5: You weren&#39;t supposed to do that.
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="BadNeutralKarmaEnding" tags="" position="903.3333333333334,4080" size="100,100">&lt;&lt;audio &quot;timermusic&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;airlocksound&quot; play&gt;&gt;\
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/suckedout.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
