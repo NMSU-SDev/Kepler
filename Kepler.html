@@ -336,6 +336,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.j
 &lt;&lt;cacheaudio &quot;timermusic&quot; &quot;sounds/timermusic.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;neutralending&quot; &quot;sounds/neutralending.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;alternateending&quot; &quot;sounds/alternateending.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;ominousmusic&quot; &quot;sounds/ominousmusic.mp3&quot;&gt;&gt;
 
 &lt;&lt;set $karma = 0&gt;&gt;
 
@@ -895,7 +896,11 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 
 &lt;&lt;set $linktext=&quot;\&quot;I&#39;m going to keep investigating. Try to leave me alone for a bit.\&quot;&quot;&gt;&gt;\ 
 [[$linktext|Sec2BeforeEntrance]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="AltHallway" tags="AltEnding" position="1528,1325" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="AltHallway" tags="AltEnding" position="1528,1325" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;ominousmusic&quot; loop play&gt;&gt;\
+
+&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/corridor2.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;As you walk through the door, the first thing you notice is the silence, not only because of the absence of the AI&#39;s voice but even the faint ambient hum of the ship that you hadn&#39;t really noticed until now has stopped
@@ -1335,7 +1340,8 @@ document.body.style.backgroundImage= &quot;url(&#39;images/Exploit.jpg&#39;)&quo
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/button&gt;&gt;\
 &lt;/span&gt;\
-&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="86" name="Control" tags="AltEnding" position="2165,1329" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="86" name="Control" tags="AltEnding" position="2165,1329" size="100,100">&lt;&lt;audio &quot;ominousmusic&quot; stop&gt;&gt;\
+&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/debug.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;The door opens and as you walk through it, the room seems to dematerialize around you, leaving you in complete darkness. White letters begin to appear in front of your eyes. You feel a strange familiarity and realize you can type words simply by thinking what it is you want to say. The text in front of you seems to show some system messeges.
