@@ -335,6 +335,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.j
 &lt;&lt;cacheaudio &quot;cockpittheme&quot; &quot;sounds/cockpittheme.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;timermusic&quot; &quot;sounds/timermusic.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;neutralending&quot; &quot;sounds/neutralending.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;alternateending&quot; &quot;sounds/alternateending.mp3&quot;&gt;&gt;
 
 &lt;&lt;set $karma = 0&gt;&gt;
 
@@ -1278,11 +1279,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/Exploit.jpg&#39;)&quo
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;Confused by the apparent lack of physical laws, you can hardly focus on the letters typing across the screen. Remembering your training in computation you recognize that the program is waiting for inputs of some sort when another image materializes in front of you...
 
 
-[[Continue|ExploitInputs]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="ExploitInputs" tags="AltEnding" position="2000,1331" size="100,100">&lt;&lt;audio &quot;maintheme&quot; stop&gt;&gt;\
-&lt;&lt;audio &quot;midgametheme&quot; stop&gt;&gt;\
-&lt;&lt;audio &quot;puzzletheme&quot; loop play&gt;&gt;\
-
-&lt;&lt;set $puzzle = random(3)&gt;&gt;\
+[[Continue|ExploitInputs]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="ExploitInputs" tags="AltEnding" position="2000,1331" size="100,100">&lt;&lt;set $puzzle = random(3)&gt;&gt;\
 &lt;&lt;if $puzzle eq 0&gt;&gt;\
 &lt;iframe src=&quot;sudoku/puzzle1/sudoku.html&quot; width=&quot;600px&quot; height=&quot;500px&quot;&gt;\&lt;/iframe&gt;\
 &lt;span id=&quot;text&quot;&gt;&lt;&lt;textarea &quot;$p1&quot; &quot;Enter the middle digits of each of the nine blocks (left to right, top to bottom)&quot; &gt;&gt;&lt;/span&gt;
@@ -1365,7 +1362,8 @@ document.body.style.backgroundImage= &quot;url(&#39;images/readme2.jpg&#39;)&quo
 
 
 
-[[Next|readme3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="readme3" tags="AltEnding" position="2826,1334" size="100,100">&lt;&lt;script&gt;&gt;
+[[Next|readme3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="readme3" tags="AltEnding" position="2826,1334" size="100,100">&lt;&lt;audio &quot;alternateending&quot; play&gt;&gt;\
+&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/readme3.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
