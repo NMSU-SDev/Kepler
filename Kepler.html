@@ -333,6 +333,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.j
 &lt;&lt;cacheaudio &quot;puzzletheme&quot; &quot;sounds/puzzletheme.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;midgametheme&quot; &quot;sounds/midgametheme.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;cockpittheme&quot; &quot;sounds/cockpittheme.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;timermusic&quot; &quot;sounds/timermusic.mp3&quot;&gt;&gt;
 
 &lt;&lt;set $karma = 0&gt;&gt;
 
@@ -1458,7 +1459,9 @@ You slowly drift asleep, hoping that you might one day wake again.
 
 &lt;&lt;set $linktext=&quot;\&quot;What?\&quot;&quot;&gt;&gt;\
 [[$linktext|NeutralKarmaEnding3]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="NeutralKarmaEnding3" tags="" position="731.6666666666667,3905" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="NeutralKarmaEnding3" tags="" position="731.6666666666667,3905" size="100,100">&lt;&lt;audio &quot;cockpittheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;timermusic&quot; loop play&gt;&gt;\
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Begin timer to hull decompression.&quot;
 The intercom clicks off.
 
@@ -1647,7 +1650,8 @@ Time remaining: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds until hull
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/button&gt;&gt;\
 &lt;/span&gt;\
-&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="106" name="NeutralKarmaEnding6" tags="" position="731.6666666666667,4356.666666666666" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="106" name="NeutralKarmaEnding6" tags="" position="731.6666666666667,4356.666666666666" size="100,100">&lt;&lt;audio &quot;timermusic&quot; stop&gt;&gt;\
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You enter the password, and the panel&#39;s screen springs to life:
 
 OVERRIDE SUCCESSFUL. DEACTIVATING TIMER TO HULL DECOMPRESSION.
@@ -1665,7 +1669,8 @@ The voice speaks once more.
 &quot;You weren&#39;t supposed to do that.&quot;
 
 			ENDING 5: You weren&#39;t supposed to do that.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="BadNeutralKarmaEnding" tags="" position="903.3333333333334,4080" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="BadNeutralKarmaEnding" tags="" position="903.3333333333334,4080" size="100,100">&lt;&lt;audio &quot;timermusic&quot; stop&gt;&gt;\
+&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/suckedout.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -1675,7 +1680,8 @@ Before you can finish fully overriding the panel, the airlock opens, and the for
 &quot;What? I just thought I&#39;d have a little fun with him.&quot;
 
 [[Wake up...|BadNeutralKarmaEnding2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="BadNeutralKarmaEnding2" tags="" position="903.3333333333334,4230" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="BadNeutralKarmaEnding2" tags="" position="903.3333333333334,4230" size="100,100">&lt;&lt;audio &quot;maintheme&quot; play&gt;&gt;\
+&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
