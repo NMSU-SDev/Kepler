@@ -781,6 +781,12 @@ Ahead of you, you see a short hallway with a couple doors. To your right, you se
 document.body.style.backgroundImage=&quot;url(&#39;images/sec8hallway.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;&lt;if visited(&quot;Sec2Landing&quot;) gt 0&gt;&gt;\
+[[Enter the research room|Sec8Research]]
+[[Go to Sector 2|Sec2Landing]]
+[[Go to Sector 8 Entrance|Sector8Entrance]]
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if visited(&quot;Sec2Landing&quot;) eq 0&gt;&gt;\
 &lt;&lt;if visited(&quot;Sec8Research&quot;) eq 0&gt;&gt;\
 After walking down the hallway, you find yourself near what looks like a research room. In front of you, there is another doorway.\
 &lt;&lt;else&gt;&gt;\
@@ -788,6 +794,7 @@ To your right is the research room. In front of you, there is another doorway.\&
 &lt;&lt;if visited(&quot;Sec8Control&quot;) eq 1&gt;&gt; Going through that doorway should lead you toward the cockpit if that map in the control room was correct.&lt;&lt;/if&gt;&gt;
 [[Enter the research room|Sec8Research]]
 [[Walk down the hallway and open the doors|Sec8Hallway2]]
+&lt;&lt;/if&gt;&gt;\
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Sec8Control" tags="" position="650,1700" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/sec8control.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;\
@@ -872,6 +879,7 @@ document.body.style.backgroundImage=&quot;url(&#39;images/sector2landing.jpg&#39
 You find yourself in a room with a several doors. One of them has a sign above it that says &quot;Only High-Ranking Crew Members Beyond This Point&quot;. The other door has a sign above it that says &quot;Conference Quarters&quot;.
 [[Enter Conference Quarters|ConferenceQuarters]]
 [[Enter High-Ranking section|HighRankSec]]
+[[Return to Sector 8 Hallway|Sec8Hallway]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="ConferenceQuarters" tags="" position="225,2425" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/conference.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;\
