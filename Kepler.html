@@ -230,6 +230,7 @@ div#memory_board > div{
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.game = {};
 window.game.memory_values = [];
 window.game.memory_tile_ids = [];
@@ -301,6 +302,7 @@ Array.prototype.memory_tile_shuffle = function( ){
 			
 		document.getElementById('memory_board').innerHTML = output;//set values for each tile
 };
+
 
 
 
@@ -490,20 +492,19 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;
 &lt;/div&gt;\
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="Control Room Door" tags="AltEnding" position="1330,966" size="100,100">&lt;&lt;if variables().inventory[0] eq 0&gt;&gt;
-&lt;&lt;script&gt;&gt;
-document.body.style.backgroundImage= &quot;url(&#39;images/Doorlocked.jpg&#39;)&quot;
-&lt;&lt;/script&gt;&gt;
-&lt;&lt;if variables().inventory[0] eq 1&gt;&gt;\
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="Control Room Door" tags="AltEnding" position="1330,966" size="100,100">&lt;&lt;if variables().inventory[0] gt 0&gt;&gt;\
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/Doorunlocked.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
-&lt;&lt;set $inventory[0]--&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You unlock the door with your keycard.
 [[Go through door|AltHallway]]
+&lt;&lt;set $inventory[0]--&gt;&gt;\
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;script&gt;&gt;
+document.body.style.backgroundImage= &quot;url(&#39;images/Doorlocked.jpg&#39;)&quot;
+&lt;&lt;/script&gt;&gt;
 &lt;&lt;if visited(&quot;Break Door Control&quot;) gt 0 and variables().inventory[0] eq 0&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Try not to break open the door this time, Commander, it clearly didn&#39;t work last time. You might want to try and find something that can open it.&quot;
@@ -1418,24 +1419,24 @@ You wake up in a daze on a cold, metal floor. You get up and begin to shake off 
 You can&#39;t seem to shake the feeling that you&#39;ve seen this all before.
 
 			ENDING 3: Expulsion.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="BadKarmaGoodEnding" tags="BadKarmaGoodEnding" position="463.33333333333337,3609.166666666667" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="BadKarmaGoodEnding" tags="BadKarmaGoodEnding" position="463,3609" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Interesting. Your choice is unexpected. Almost too unexpected. I&#39;m unsure how to proceed.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;I don&#39;t understand. I just did what you told me to do.\&quot;&quot;&gt;&gt;\
 [[$linktext|BadKarmaGoodEnding2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="BadKarmaGoodEnding2" tags="" position="463.33333333333337,3759.166666666667" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="BadKarmaGoodEnding2" tags="" position="463,3759" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Indeed you did. But your behavior so far seems to indicate that you shouldn&#39;t have.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;Why does that matter?\&quot;&quot;&gt;&gt;\
 [[$linktext|BadKarmaGoodEnding3]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="BadKarmaGoodEnding3" tags="" position="463.33333333333337,3909.166666666667" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="BadKarmaGoodEnding3" tags="" position="463,3909" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 The voice doesn&#39;t respond for a while. After what seems like minutes, you hear the voice begin to speak again.
 
 &quot;Indeed you did. But your behavior so far seems to indicate that you shouldn&#39;t have.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;Why does that matter?\&quot;&quot;&gt;&gt;\
 [[$linktext|BadKarmaGoodEnding4]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="BadKarmaGoodEnding4" tags="" position="463.33333333333337,4059.166666666667" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="BadKarmaGoodEnding4" tags="" position="463,4059" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 The voice doesn&#39;t acknowledge you, and begins having a conversation with what you can only assume is another person.
 
 &quot;Yes... 
@@ -1448,7 +1449,7 @@ Will do, sir...&quot;
 As the voice finishes speaking you feel yourself start to leave your own body, and become nothing more than a floating conscience. Everything goes black.
 
 [[Continue|BadKarmaGoodEnding5]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="BadKarmaGoodEnding5" tags="" position="463.33333333333337,4209.166666666667" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="BadKarmaGoodEnding5" tags="" position="463,4209" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/blackscreen.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -1461,12 +1462,12 @@ Time is irrelevant.
 You slowly drift asleep, hoping that you might one day wake again.
 
 			ENDING 2: Hibernation.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="NeutralKarmaEnding2" tags="" position="731.6666666666667,3753.333333333333" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="NeutralKarmaEnding2" tags="" position="731,3753" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;We&#39;ve gone through this about a hundred times now. Normally, I would just jettison you out the airlock right now, but you&#39;ve behaved yourself suprisingly well this go-around. I figure I&#39;ll give you a small sliver of hope this time, just to show my gratitude.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;What?\&quot;&quot;&gt;&gt;\
 [[$linktext|NeutralKarmaEnding3]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="NeutralKarmaEnding3" tags="" position="731.6666666666667,3905" size="100,100">&lt;&lt;audio &quot;cockpittheme&quot; stop&gt;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="NeutralKarmaEnding3" tags="" position="731,3905" size="100,100">&lt;&lt;audio &quot;cockpittheme&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;timermusic&quot; loop play&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Begin timer to hull decompression.&quot;
@@ -1487,7 +1488,7 @@ Time remaining: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds until hull
 &lt;&lt;/silently&gt;&gt;
 
 This isn&#39;t good. You begin to look for a way out, and notice an [[override panel|NeutralKarmaEnding4]] next to the airlock.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="104" name="NeutralKarmaEnding4" tags="" position="731.6666666666667,4056.6666666666665" size="100,100">Time remaining: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds until hull decompression&lt;/span&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="104" name="NeutralKarmaEnding4" tags="" position="731,4056" size="100,100">Time remaining: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds until hull decompression&lt;/span&gt;\
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;repeat 1s&gt;&gt;
         &lt;&lt;set $seconds to $seconds - 1&gt;&gt;
@@ -1570,7 +1571,7 @@ This isn&#39;t good. You begin to look for a way out, and notice an [[override p
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/button&gt;&gt;\
 &lt;/span&gt;\
-&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="105" name="NeutralKarmaEnding5" tags="" position="731.6666666666667,4206.666666666666" size="100,100">&quot;ERROR: SEGMENTATION FAULT. PLEASE TRY AGAIN&quot;
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="105" name="NeutralKarmaEnding5" tags="" position="731,4206" size="100,100">&quot;ERROR: SEGMENTATION FAULT. PLEASE TRY AGAIN&quot;
 
 Your heart sinks as the override panel lights up again.
 
@@ -1657,7 +1658,7 @@ Time remaining: &lt;span id=&quot;countdown&quot;&gt;$seconds seconds until hull
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/button&gt;&gt;\
 &lt;/span&gt;\
-&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="106" name="NeutralKarmaEnding6" tags="" position="731.6666666666667,4356.666666666666" size="100,100">&lt;&lt;audio &quot;timermusic&quot; stop&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="106" name="NeutralKarmaEnding6" tags="" position="731,4356" size="100,100">&lt;&lt;audio &quot;timermusic&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;neutralending&quot; play&gt;&gt;\
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You enter the password, and the panel&#39;s screen springs to life:
@@ -1677,7 +1678,7 @@ The voice speaks once more.
 &quot;You weren&#39;t supposed to do that.&quot;
 
 			ENDING 5: You weren&#39;t supposed to do that.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="BadNeutralKarmaEnding" tags="" position="903.3333333333334,4080" size="100,100">&lt;&lt;audio &quot;timermusic&quot; stop&gt;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="BadNeutralKarmaEnding" tags="" position="903,4080" size="100,100">&lt;&lt;audio &quot;timermusic&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;airlocksound&quot; play&gt;&gt;\
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/suckedout.png&#39;)&quot;
@@ -1689,7 +1690,7 @@ Before you can finish fully overriding the panel, the airlock opens, and the for
 &quot;What? I just thought I&#39;d have a little fun with him.&quot;
 
 [[Wake up...|BadNeutralKarmaEnding2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="BadNeutralKarmaEnding2" tags="" position="903.3333333333334,4230" size="100,100">&lt;&lt;audio &quot;maintheme&quot; play&gt;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="BadNeutralKarmaEnding2" tags="" position="903,4230" size="100,100">&lt;&lt;audio &quot;maintheme&quot; play&gt;&gt;\
 &lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
