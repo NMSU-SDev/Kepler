@@ -332,6 +332,7 @@ document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.j
 </tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="BGProcess" position="50,100" size="100,100">&lt;&lt;cacheaudio &quot;maintheme&quot; &quot;sounds/maintheme.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;puzzletheme&quot; &quot;sounds/puzzletheme.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;midgametheme&quot; &quot;sounds/midgametheme.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;cockpittheme&quot; &quot;sounds/cockpittheme.mp3&quot;&gt;&gt;
 
 &lt;&lt;set $karma = 0&gt;&gt;
 
@@ -1091,7 +1092,7 @@ You open the misplace book and inside it you find a keycard.
 &lt;&lt;/button&gt;&gt;\
 &lt;/span&gt;\
 &lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="66" name="Cockpit" tags="" position="500,3000" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;\
-&lt;&lt;audio &quot;midgametheme&quot; loop play&gt;&gt;\
+&lt;&lt;audio &quot;cockpittheme&quot; loop play&gt;&gt;\
 
 &lt;&lt;set $inventory[0]--&gt;&gt;
 &lt;&lt;script&gt;&gt;
@@ -1230,7 +1231,9 @@ As the voice finishes speaking, you feel your memory begin to fade as you come t
 
 &lt;&lt;set $linktext=&quot;Wake up&quot;&gt;&gt;\
 [[$linktext|GoodKarmaEnding6]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="GoodKarmaEnding6" tags="GoodEnding" position="125,3975" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="GoodKarmaEnding6" tags="GoodEnding" position="125,3975" size="100,100">&lt;&lt;audio &quot;cockpittheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;maintheme&quot; play&gt;&gt;\
+&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -1387,7 +1390,8 @@ document.body.style.backgroundImage= &quot;url(&#39;images/readme3.jpg&#39;)&quo
 
 &lt;&lt;set $linktext=&quot;\&quot;Participation?\&quot;&quot;&gt;&gt;\
 [[$linktext|BadEnding6]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="BadEnding6" tags="BadEnding" position="1275,3975" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="BadEnding6" tags="BadEnding" position="1275,3975" size="100,100">&lt;&lt;audio &quot;cockpittheme&quot; stop&gt;&gt;\
+&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/suckedout.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
@@ -1396,7 +1400,8 @@ document.body.style.backgroundImage=&quot;url(&#39;images/suckedout.png&#39;)&qu
 You begin to panic. You know what is about to happen. You spot a disposed EVA suit on a rack, and desperately attempt to put it on. Before you can finish fully securing the suit, the airlock opens, and the force of the vaccuum rips you from the room. As you begin to drift in space, you feel as though your eyes and lungs are bursting. You gasp for air but get none. Your vision fades as you look upon the planet beneath you.
 
 [[Wake up...|BadEnding7]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="BadEnding7" tags="BadEnding" position="1200,4100" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="BadEnding7" tags="BadEnding" position="1200,4100" size="100,100">&lt;&lt;audio &quot;maintheme&quot; play&gt;&gt;\
+&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage= &quot;url(&#39;images/startbackgroundwkey.jpg&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
