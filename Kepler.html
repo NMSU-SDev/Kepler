@@ -1059,8 +1059,8 @@ You open the misplace book and inside it you find a keycard.
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/button&gt;&gt;\
 &lt;/span&gt;\
-&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="66" name="Cockpit" tags="" position="500,3000" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;midgametheme&quot; loop play&gt;&gt;
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="66" name="Cockpit" tags="" position="500,3000" size="100,100">&lt;&lt;audio &quot;puzzletheme&quot; stop&gt;&gt;\
+&lt;&lt;audio &quot;midgametheme&quot; loop play&gt;&gt;\
 
 &lt;&lt;set $inventory[0]--&gt;&gt;
 &lt;&lt;script&gt;&gt;
@@ -1160,7 +1160,7 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 
 &lt;&lt;set $linktext=&quot;\&quot;What do you mean?\&quot;&quot;&gt;&gt;\
 [[$linktext|BadKarmaEnding2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="NeutralKarmaEnding" tags="NeutralEnding" position="900,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\</tw-passagedata><tw-passagedata pid="75" name="GoodKarmaEnding2" tags="GoodEnding" position="125,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="NeutralKarmaEnding" tags="NeutralEnding" position="828.3333333333334,3601.6666666666665" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\</tw-passagedata><tw-passagedata pid="75" name="GoodKarmaEnding2" tags="GoodEnding" position="125,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You go into the ship-to-surface pod and being the on-screen system check. You are still unsure whether or not the crew is on the surface of the planet or not. Regardless of whether or not they are there, you are determined to complete the research and send your findings back to Earth in the hopes that the human race will have a chance to return here and continue its legacy. You hear the AI intercom click on again:
 
 &quot;All systems are ready and the research equipment is ready for deployment. Are you ready to go to the surface, Commander?&quot;
@@ -1368,6 +1368,49 @@ You wake up in a daze on a cold, metal floor. You get up and begin to shake off 
 You can&#39;t seem to shake the feeling that you&#39;ve seen this all before.
 
 			ENDING 3: Expulsion.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="BadKarmaGoodEnding" tags="BadKarmaGoodEnding" position="463.33333333333337,3609.166666666667" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&quot;Interesting. Your choice is unexpected. Almost too unexpected. I&#39;m unsure how to proceed.&quot;
+
+&lt;&lt;set $linktext=&quot;\&quot;I don&#39;t understand. I just did what you told me to do.\&quot;&quot;&gt;&gt;\
+[[$linktext|BadKarmaGoodEnding2]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="BadKarmaGoodEnding2" tags="" position="463.33333333333337,3759.166666666667" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&quot;Indeed you did. But your behavior so far seems to indicate that you shouldn&#39;t have.&quot;
+
+&lt;&lt;set $linktext=&quot;\&quot;Why does that matter?\&quot;&quot;&gt;&gt;\
+[[$linktext|BadKarmaGoodEnding3]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="BadKarmaGoodEnding3" tags="" position="463.33333333333337,3909.166666666667" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+The voice doesn&#39;t respond for a while. After what seems like minutes, you hear the voice begin to speak again.
+
+&quot;Indeed you did. But your behavior so far seems to indicate that you shouldn&#39;t have.&quot;
+
+&lt;&lt;set $linktext=&quot;\&quot;Why does that matter?\&quot;&quot;&gt;&gt;\
+[[$linktext|BadKarmaGoodEnding4]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="BadKarmaGoodEnding4" tags="" position="463.33333333333337,4059.166666666667" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+The voice doesn&#39;t acknowledge you, and begins having a conversation with what you can only assume is another person.
+
+&quot;Yes... 
+No sir... 
+He chose the good option... 
+I know, it doesn&#39;t make sense... 
+Should I tag this iteration for further analysis?... 
+Will do, sir...&quot;
+
+As the voice finishes speaking you feel yourself start to leave your own body, and become nothing more than a floating conscience. Everything goes black.
+
+[[Continue|BadKarmaGoodEnding5]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="BadKarmaGoodEnding5" tags="" position="463.33333333333337,4209.166666666667" size="100,100">&lt;&lt;script&gt;&gt;
+document.body.style.backgroundImage=&quot;url(&#39;images/blackscreen.png&#39;)&quot;
+&lt;&lt;/script&gt;&gt;
+&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+You find yourself in a void. The voice that once followed you everywhere is now gone, and you don&#39;t seem to have any frame of reference for how long you&#39;ve been here.
+
+You can&#39;t move.
+You can&#39;t feel.
+Time is irrelevant.
+
+You slowly drift asleep, hoping that you might one day wake again.
+
+			ENDING 2: Hibernation.
 &lt;/div&gt;</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
