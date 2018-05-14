@@ -1084,9 +1084,7 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;script&gt;&gt;
 document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 &lt;&lt;/script&gt;&gt;\&lt;&lt;/link&gt;&gt;
-&lt;/div&gt;
-
-</tw-passagedata><tw-passagedata pid="67" name="CockpitGood" tags="" position="400,3150" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="CockpitGood" tags="" position="400,3150" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;As I stated earlier, Commander, the chance that they are on the surface is slim. But, it is my job to remind you that it is imperative that you complete the mission. I suggest that you go down to the surface of the planet. If not to find the crew, then to begin research so that we can save the people back on Earth who are counting on this mission and the planet being inhabitable.&quot;
 
 &lt;&lt;set $linktext=&quot;\&quot;I agree, I think that I should go to the surface and investigate. If this planet can sustain human life, the people back on Earth have a fighting chance.\&quot;&quot;&gt;&gt;\
@@ -1159,7 +1157,9 @@ document.getElementById(&quot;karmameter&quot;).value = variables().karma;
 [[Go to pod|GoodKarmaEnding2]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="BadKarmaEnding" tags="BadEnding" position="1200,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;To be honest Commander, I did not expect anything different from you on this mission.&quot;
-[[What do you mean?|BadKarmaEnding2]]
+
+&lt;&lt;set $linktext=&quot;\&quot;What do you mean?\&quot;&quot;&gt;&gt;\
+&lt;&lt;[[$linktext|BadKarmaEnding2]]&gt;&gt;\
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="NeutralKarmaEnding" tags="NeutralEnding" position="900,3600" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\</tw-passagedata><tw-passagedata pid="75" name="GoodKarmaEnding2" tags="GoodEnding" position="125,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 You go into the ship-to-surface pod and being the on-screen system check. You are still unsure whether or not the crew is on the surface of the planet or not. Regardless of whether or not they are there, you are determined to complete the research and send your findings back to Earth in the hopes that the human race will have a chance to return here and continue its legacy. You hear the AI intercom click on again:
 
@@ -1329,18 +1329,27 @@ document.body.style.backgroundImage= &quot;url(&#39;images/readme3.jpg&#39;)&quo
 &lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 			ENDING 4: The Truth
 &lt;/div&gt;\</tw-passagedata><tw-passagedata pid="91" name="BadKarmaEnding2" tags="BadEnding" position="1200,3725" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
-&quot;You and I have been in this situation before... but I suspect you don&#39;t remember. You have shown repeated patterns of insubordination and cowardice. Are you a coward Commander?&quot;
-[[No|BadKarmaEnding3]]
-[[I don&#39;t know|BadKarmaEnding4]]
+&quot;You and I have been in this situation before... but I suspect you don&#39;t remember. You have shown repeated patterns of insubordination and cowardice. Are you a coward, Commander?&quot;
+
+&lt;&lt;set $linktext=&quot;\&quot;No.\&quot;&quot;&gt;&gt;\
+[[$linktext|BadKarmaEnding3]]
+&lt;&lt;set $linktext=&quot;\&quot;I don&#39;t know.\&quot;&quot;&gt;&gt;\
+[[$linktext|BadKarmaEnding4]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="BadKarmaEnding3" tags="BadEnding" position="1125,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Then I suspect you are not afraid of death Commander. Or are you?&quot;
-[[Am I going to die?|BadEnding5]]
+
+&lt;&lt;set $linktext=&quot;\&quot;Am I going to die?\&quot;&quot;&gt;&gt;\
+[[$linktext|BadEnding5]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="BadKarmaEnding4" tags="BadEnding" position="1275,3850" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
 &quot;Ha, and you cannot even stand up for yourself. It is clear that we no longer need your participation.&quot;
-[[Paricipation?|BadEnding6]]
+
+&lt;&lt;set $linktext=&quot;\&quot;Paricipation?\&quot;&quot;&gt;&gt;\
+[[$linktext|BadEnding6]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="BadEnding5" tags="BadEnding" position="1125,3975" size="100,100">&lt;div class=&quot;dialogueBox&quot; id=&quot;dialogueBox-statement&quot;&gt;\
-&quot;Lets just say that I have reached a final conclusion in my research. Your participation is no longer required Commander.&quot;
-[[Continue|BadEnding6]]
+&quot;Let&#39;s just say that I have come to the conclusion that your participation is no longer required Commander.&quot;
+
+&lt;&lt;set $linktext=&quot;\&quot;Paricipation?\&quot;&quot;&gt;&gt;\
+[[$linktext|BadEnding6]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="BadEnding6" tags="BadEnding" position="1275,3975" size="100,100">&lt;&lt;script&gt;&gt;
 document.body.style.backgroundImage=&quot;url(&#39;images/suckedout.png&#39;)&quot;
 &lt;&lt;/script&gt;&gt;
